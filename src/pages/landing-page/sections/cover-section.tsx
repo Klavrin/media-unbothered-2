@@ -5,13 +5,15 @@ const CoverSection = () => {
   return (
     <section className="xl:h-screen h-full pb-[50px] pt-[120px] flex flex-col justify-center">
       <div className="flex flex-col ">
-        <h1 className="xl:text-[4rem] text-[5vw] font-medium leading-normal">At</h1>
+        <h1 className="xl:text-[4rem] sm:text-[5vw] text-[28px] font-medium leading-normal">
+          At
+        </h1>
         <img
           src="./src/assets/media-unbothered.svg"
           alt="Media Unbothered"
           className="w-screen -z-50"
         />
-        <h1 className="xl:text-[4rem] text-[5vw] font-medium leading-normal">
+        <h1 className="xl:text-[4rem] sm:text-[5vw] text-[28px] font-medium leading-normal">
           we defy the odds.
         </h1>
       </div>

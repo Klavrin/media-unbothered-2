@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react'
 import { gsap } from 'gsap'
-import { ScrollTrigger } from 'gsap/all'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 const WhyUsSection = () => {
   const rootRef = useRef<HTMLDivElement | null>(null)
@@ -23,32 +23,32 @@ const WhyUsSection = () => {
     return () => context.revert()
   }, [])
 
-  const spans = [{ innerText: '' }]
+  const spans = [
+    { innerText: 'At Media Unbothered, we redefine the narrative.' },
+    {
+      innerText:
+        'Choose us for campaigns that demand attention, where every pixel carries purpose.'
+    },
+    {
+      innerText:
+        'Unleash the unbothered spirit—your journey to an unforgettable story starts here.'
+    }
+  ]
 
   return (
-    <section ref={rootRef} className="leading-5 py-[110px]">
+    <section ref={rootRef} className="leading-5 md:py-[110px] py-[50px]">
       <h2 className="text-white/80 text-xl font-normal leading-normal mb-[37px]">
         Why us
       </h2>
 
-      <span
-        id="span"
-        className="text-white opacity-40 md:text-[35px] text-[25px] font-normal leading-[100%]"
-      >
-        At Media Unbothered, we redefine the narrative.{' '}
-      </span>
-      <span
-        id="span"
-        className="text-white opacity-40 md:text-[35px] text-[25px] font-normal leading-[100%]"
-      >
-        Choose us for campaigns that demand attention, where every pixel carries purpose.{' '}
-      </span>
-      <span
-        id="span"
-        className="text-white opacity-40 md:text-[35px] text-[25px] font-normal leading-[100%]"
-      >
-        Unleash the unbothered spirit—your journey to an unforgettable story starts here.
-      </span>
+      {spans.map((span) => (
+        <span
+          id="span"
+          className="text-white opacity-40 md:text-[35px] text-[25px] font-normal leading-[100%]"
+        >
+          {span.innerText}{' '}
+        </span>
+      ))}
     </section>
   )
 }

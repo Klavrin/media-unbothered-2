@@ -11,6 +11,7 @@ const LandingPage = () => {
         <WhyUsSection />
         <hr className="w-full h-[2px] bg-white opacity-40 rounded-full" />
         <OurServicesSection />
+        <hr className="w-full h-[2px] bg-white opacity-40 rounded-full" />
       </div>
     </main>
   )
