@@ -10,11 +10,11 @@ const Header = () => {
 
   return (
     <header className="w-screen absolute">
-      <div className="max-w-[1200px] h-[75px] mx-auto xl:px-[75px] px-[18px] text-white flex justify-between items-center transition-[padding] duration-500">
+      <div className="max-w-[1400px] h-[75px] mx-auto xl:px-[75px] px-[18px] text-white flex justify-between items-center transition-[padding] duration-500">
         <div className="sm:static absolute left-0 sm:w-auto w-screen text-center">
           <Link
             to="/"
-            className="text-white/60 hover:text-white text-[50px] font-humane font-bold leading-normal tracking-normal hover:tracking-wide transition-[letter-spacing]"
+            className="text-white/60 hover:text-white text-[50px] font-humane font-bold leading-normal tracking-normal hover:tracking-wider transition-[letter-spacing]"
           >
             MEDIA UNBOTHERED
           </Link>

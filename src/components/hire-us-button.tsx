@@ -5,7 +5,7 @@ const HireUsButton = () => {
   // const hireUsButtonRef = useRef<HTMLImageElement>(null)
 
   return (
-    <div className="w-full min-w-[150px] min-h-[150px] flex justify-center items-center">
+    <div className="w-full min-w-[150px] min-h-[150px] md:flex hidden justify-center items-center">
       <img
         // ref={hireUsButtonRef}
         src="./src/assets/hire-us-button.png"
