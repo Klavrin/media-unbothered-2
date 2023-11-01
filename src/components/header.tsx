@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import HamburgerMenu from './hamburger-menu'
+import { Fragment } from 'react'
 
 const Header = () => {
   const links = [
@@ -23,15 +24,14 @@ const Header = () => {
         <HamburgerMenu />
         <nav className="sm:flex hidden gap-[15px] items-center text-[15px]">
           {links.map((link, index) => (
-            // Warning: Each child in a list should have a unique "key" prop.
-            <>
+            <Fragment key={link.title}>
               <Link to={link.to} className="hover:opacity-70 transition-all">
                 {link.title}
               </Link>
               {index !== links.length - 1 && (
                 <img src="./src/assets/ellipse.svg" alt="" className="-z-50" />
               )}
-            </>
+            </Fragment>
           ))}
         </nav>
       </div>

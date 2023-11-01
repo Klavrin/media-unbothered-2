@@ -1,5 +1,5 @@
-import { useEffect, useRef } from 'react'
-import gsap from 'gsap'
+import { useRef, Fragment } from 'react'
+// import gsap from 'gsap'
 
 const OurServicesSection = () => {
   const rootRef = useRef(null)
@@ -30,7 +30,7 @@ const OurServicesSection = () => {
       </h2>
 
       {services.map((service, index) => (
-        <>
+        <Fragment key={service.title}>
           <div id="service" className="flex items-end gap-4 cursor-pointer">
             <h1 className={`xl:text-[100px] text-[7.14vw] leading-none py-4`}>
               {service.title}
@@ -42,7 +42,7 @@ const OurServicesSection = () => {
           {index !== services.length - 1 && (
             <hr className="w-full h-[2px] bg-white opacity-40 rounded-full" />
           )}
-        </>
+        </Fragment>
       ))}
     </section>
   )

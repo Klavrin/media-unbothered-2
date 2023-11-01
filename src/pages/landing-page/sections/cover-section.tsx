@@ -1,5 +1,6 @@
 import CustomButton from '../../../components/custom-button'
 import HireUsButton from '../../../components/hire-us-button'
+import Footer from '../../../components/footer'
 
 const CoverSection = () => {
   return (
@@ -19,7 +20,7 @@ const CoverSection = () => {
       </div>
 
       <div className="flex-inline md:flex md:flex-row flex-col md:mt-[38px] mt-[18px]">
-        <p className="max-w-2/3 md:text-[30px] text-[20px] font-light leading-[100%] opacity-60">
+        <p className="max-w-2/3 md:text-[30px] text-[20px] font-light leading-[100%] opacity-60 mb-[25px]">
           Welcome to Media Unbothered, where digital dreams become reality. We're not just
           another agency—we're the architects of exceptional web development and the
           maestros of Facebook, Instagram, and Google ads. Unleash the power of your
@@ -30,7 +31,8 @@ const CoverSection = () => {
         <CustomButton
           innerText="Hire us"
           styles="text-[20px] px-[50px] py-[11px]"
-          imgSize={40}
+          imgStyles="min-w-[40px]"
+          hideForWideScreens
         />
       </div>
     </section>

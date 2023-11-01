@@ -41,14 +41,13 @@ const WhyUsSection = () => {
         Why us
       </h2>
 
-      {spans.map((span) => (
-        <span
-          id="span"
-          className="text-white opacity-40 md:text-[35px] text-[25px] font-normal leading-[100%]"
-        >
-          {span.innerText}{' '}
-        </span>
-      ))}
+      <p className="text-white md:text-[35px] text-[25px] font-normal leading-[100%]">
+        {spans.map((span) => (
+          <span key={span.innerText} id="span" className="opacity-10">
+            {span.innerText}{' '}
+          </span>
+        ))}
+      </p>
     </section>
   )
 }
