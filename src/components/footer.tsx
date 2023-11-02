@@ -16,14 +16,14 @@ const Footer = () => {
   ]
 
   return (
-    <footer className="max-w-[1400px] mx-auto xl:px-[75px] px-[18px] pt-10 pb-4 text-white">
+    <footer className="max-w-[1400px] mx-auto xl:px-[75px] px-[18px] pt-10 pb-5 text-white">
       <img
         src="./src/assets/media-unbothered.svg"
         alt="Media Unbothered"
         className="w-screen -z-50"
       />
 
-      <div className="mt-[50px] flex md:flex-row flex-col justify-between items-center max-[500px]:gap-[10px] gap-[0px]">
+      <div className="mt-[50px] flex md:flex-row flex-col justify-between items-center gap-[10px]">
         <nav className="flex max-[500px]:flex-col flex-row lg:gap-[50px] gap-[20px] text-center">
           {links.map((link) => (
             <Link
@@ -39,8 +39,8 @@ const Footer = () => {
         <div className="flex gap-[50px]">
           {socials.map((social) => (
             <Link
-              to={social.to}
               key={social.alt}
+              to={social.to}
               className="w-[25px] h-[25px] hover:opacity-70 transition-all"
             >
               <img src={social.imageSrc} alt={social.alt} />

@@ -31,11 +31,14 @@ const OurServicesSection = () => {
 
       {services.map((service, index) => (
         <Fragment key={service.title}>
-          <div id="service" className="flex items-end gap-4 cursor-pointer">
-            <h1 className={`xl:text-[100px] text-[7.14vw] leading-none py-4`}>
+          <div
+            id={`service-${index}`}
+            className="group flex gap-4 cursor-pointer hover:text-black hover:bg-gradient-to-r from-white/60 via-white to-white/60 md:hover:pl-16 hover:pl-6 transition-all md:pt-4 pt-2"
+          >
+            <h1 className="xl:text-[100px] text-[7.14vw] leading-none py-4">
               {service.title}
             </h1>
-            <p className="text-white/60 md:text-[20px] text-[12px] font-normal underline lg:mb-4">
+            <p className="text-white/60 md:text-[20px] self-end text-[12px] font-normal underline md:mb-[2vw] mb-[3vw] group-hover:opacity-0">
               {service.sideText}
             </p>
           </div>

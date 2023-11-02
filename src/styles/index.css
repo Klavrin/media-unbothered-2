@@ -66,4 +66,8 @@ body {
   font-weight: 400;
   background-color: #141414;
   text-rendering: geometricPrecision;
+
+  background-image: url('./src/assets/Background.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
 }

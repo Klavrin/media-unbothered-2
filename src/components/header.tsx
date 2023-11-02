@@ -1,8 +1,11 @@
+import { Fragment, useState, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import HamburgerMenu from './hamburger-menu'
-import { Fragment } from 'react'
+import MobileDrawer from './mobile-drawer'
 
 const Header = () => {
+  const [drawerOpened, setDrawerOpened] = useState(false)
+  const drawerRef = useRef(null)
   const links = [
     { title: 'About us', to: '/' },
     { title: 'Services', to: '/' },
@@ -21,7 +24,13 @@ const Header = () => {
           </Link>
         </div>
 
-        <HamburgerMenu />
+        <MobileDrawer
+          links={links}
+          drawerOpened={drawerOpened}
+          closeDrawer={() => setDrawerOpened(false)}
+          drawerRef={drawerRef}
+        />
+        <HamburgerMenu drawerRef={drawerRef} openDrawer={() => setDrawerOpened(true)} />
         <nav className="sm:flex hidden gap-[15px] items-center text-[15px]">
           {links.map((link, index) => (
             <Fragment key={link.title}>

@@ -7,7 +7,7 @@ const App = () => {
   return (
     <>
       <Header />
-      <main className="bg-main bg-no-repeat bg-cover overflow-hidden">
+      <main className="overflow-hidden">
         <Routes>
           <Route path="/" element={<LandingPage />} />
         </Routes>
