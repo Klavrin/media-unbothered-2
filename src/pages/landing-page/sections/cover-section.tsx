@@ -1,8 +1,10 @@
 import CustomButton from '../../../components/custom-button'
 import HireUsButton from '../../../components/hire-us-button'
-import Footer from '../../../components/footer'
+import useCursorSize from '../../../lib/use-cursor-size'
 
 const CoverSection = () => {
+  const { setCursorSize } = useCursorSize()
+
   return (
     <section className="xl:h-screen h-full pb-[50px] pt-[120px] flex flex-col justify-center">
       <div className="flex flex-col ">
@@ -12,7 +14,9 @@ const CoverSection = () => {
         <img
           src="./src/assets/media-unbothered.svg"
           alt="Media Unbothered"
-          className="w-screen -z-50"
+          className="w-screen"
+          onMouseOver={() => setCursorSize(300)}
+          onMouseLeave={() => setCursorSize(40)}
         />
         <h1 className="xl:text-[4rem] sm:text-[5vw] text-[28px] font-medium leading-normal">
           we defy the odds.
@@ -20,7 +24,11 @@ const CoverSection = () => {
       </div>
 
       <div className="flex-inline md:flex md:flex-row flex-col md:mt-[38px] mt-[18px]">
-        <p className="max-w-2/3 md:text-[30px] text-[20px] font-light leading-[100%] opacity-60 mb-[25px]">
+        <p
+          className="max-w-2/3 md:text-[30px] text-[20px] font-light leading-[100%] opacity-60 mb-[25px]"
+          onMouseOver={() => setCursorSize(80)}
+          onMouseLeave={() => setCursorSize(40)}
+        >
           Welcome to Media Unbothered, where digital dreams become reality. We're not just
           another agency—we're the architects of exceptional web development and the
           maestros of Facebook, Instagram, and Google ads. Unleash the power of your

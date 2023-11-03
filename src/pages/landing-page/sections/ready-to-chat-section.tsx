@@ -1,14 +1,21 @@
 import CustomButton from '../../../components/custom-button'
 import DashedButton from '../../../components/dashed-button'
+import useCursorSize from '../../../lib/use-cursor-size'
 
 const ReadyToChatSection = () => {
+  const { setCursorSize } = useCursorSize()
+
   return (
     <section className="md:py-[130px] py-[50px]">
       <h2 className="text-white/80 text-xl font-normal leading-normal mb-[37px]">
         Ready to have a chat?
       </h2>
 
-      <p className="md:text-[35px] text-[25px] font-normal leading-[100%]">
+      <p
+        className="md:text-[35px] text-[25px] font-normal leading-[100%]"
+        onMouseOver={() => setCursorSize(80)}
+        onMouseLeave={() => setCursorSize(40)}
+      >
         Let's turn your digital aspirations into a strategic masterpiece. Whether it's
         crafting a stunning website or orchestrating ad campaigns that resonate, we're
         here to amplify your online success. Click, connect, conquer!

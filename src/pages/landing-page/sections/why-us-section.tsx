@@ -1,9 +1,11 @@
 import { useEffect, useRef } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import useCursorSize from '../../../lib/use-cursor-size'
 
 const WhyUsSection = () => {
   const rootRef = useRef<HTMLDivElement | null>(null)
+  const { setCursorSize } = useCursorSize()
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger)
@@ -41,7 +43,11 @@ const WhyUsSection = () => {
         Why us
       </h2>
 
-      <p className="text-white md:text-[35px] text-[25px] font-normal leading-[100%]">
+      <p
+        className="text-white md:text-[35px] text-[25px] font-normal leading-[100%]"
+        onMouseOver={() => setCursorSize(80)}
+        onMouseLeave={() => setCursorSize(40)}
+      >
         {spans.map((span) => (
           <span key={span.innerText} id="span" className="opacity-10">
             {span.innerText}{' '}

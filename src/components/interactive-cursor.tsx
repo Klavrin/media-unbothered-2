@@ -1,20 +1,30 @@
 import { useEffect, useState } from 'react'
+import { useSelector } from 'react-redux'
 
 const InteractiveCursor = () => {
   const [position, setPosition] = useState({ x: 0, y: 0 })
+  const cursorSize = useSelector((state: any) => state.cursor.size)
 
   useEffect(() => {
-    window.addEventListener('mousemove', (e) => {
+    const handleMouseMovement = (e: MouseEvent) => {
       setPosition({ x: e.clientX, y: e.clientY })
-    })
+    }
 
-    // add a cleanup function
+    window.addEventListener('mousemove', handleMouseMovement)
+
+    return () => window.removeEventListener('mousemove', handleMouseMovement)
   }, [])
 
   return (
     <div
-      className="w-[40px] h-[40px] border border-white rounded-full absolute z-50 pointer-events-none"
-      style={{ transform: `translate(${position.x - 20}px, ${position.y - 20}px)` }}
+      className="rounded-full bg-white fixed z-50 pointer-events-none transition-all duration-[0.05] ease-out mix-blend-difference lg:block hidden opacity-90"
+      style={{
+        width: cursorSize,
+        height: cursorSize,
+        transform: `translate(${position.x - cursorSize / 2}px, ${
+          position.y - cursorSize / 2
+        }px)`
+      }}
     ></div>
   )
 }

@@ -1,3 +1,5 @@
+import useCursorSize from '../lib/use-cursor-size'
+
 type CustomButtonProps = {
   innerText: string
   styles?: string
@@ -11,10 +13,14 @@ const CustomButton = ({
   imgStyles,
   hideForWideScreens
 }: CustomButtonProps) => {
+  const { setCursorSize } = useCursorSize()
+
   return (
     <div className={`flex items-center ${hideForWideScreens && 'md:hidden'}`}>
       <button
         className={`bg-white text-black rounded-[56px] whitespace-nowrap ${styles}`}
+        onMouseOver={() => setCursorSize(180)}
+        onMouseLeave={() => setCursorSize(40)}
       >
         {innerText}
       </button>

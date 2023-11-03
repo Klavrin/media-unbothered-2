@@ -1,8 +1,9 @@
 import { useRef, Fragment } from 'react'
-// import gsap from 'gsap'
+import useCursorSize from '../../../lib/use-cursor-size'
 
 const OurServicesSection = () => {
   const rootRef = useRef(null)
+  const { setCursorSize } = useCursorSize()
 
   const services = [
     {
@@ -34,6 +35,8 @@ const OurServicesSection = () => {
           <div
             id={`service-${index}`}
             className="group flex gap-4 cursor-pointer hover:text-black hover:bg-gradient-to-r from-white/60 via-white to-white/60 md:hover:pl-16 hover:pl-6 transition-all md:pt-4 pt-2"
+            onMouseOver={() => setCursorSize(180)}
+            onMouseLeave={() => setCursorSize(40)}
           >
             <h1 className="xl:text-[100px] text-[7.14vw] leading-none py-4">
               {service.title}

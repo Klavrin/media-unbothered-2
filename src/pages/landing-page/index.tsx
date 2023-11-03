@@ -2,17 +2,12 @@ import CoverSection from './sections/cover-section'
 import WhyUsSection from './sections/why-us-section'
 import OurServicesSection from './sections/our-services-section'
 import ReadyToChatSection from './sections/ready-to-chat-section'
-// import InteractiveCursor from '../../components/interactive-cursor'
-
-/**
- * @TODO Fix the side texts in the "Our services" section
- * @TODO Add animations
- */
+import InteractiveCursor from '../../components/interactive-cursor'
 
 const LandingPage = () => {
   return (
     <>
-      {/* <InteractiveCursor /> */}
+      <InteractiveCursor />
 
       <div className="max-w-[1400px] mx-auto text-white xl:px-[75px] px-[18px]">
         <CoverSection />

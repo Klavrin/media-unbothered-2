@@ -1,6 +1,9 @@
 import { Link } from 'react-router-dom'
+import useCursorSize from '../lib/use-cursor-size'
 
 const Footer = () => {
+  const { setCursorSize } = useCursorSize()
+
   const links = [
     { title: 'HOME', to: '/' },
     { title: 'ABOUT US', to: '/' },
@@ -21,6 +24,8 @@ const Footer = () => {
         src="./src/assets/media-unbothered.svg"
         alt="Media Unbothered"
         className="w-screen -z-50"
+        onMouseOver={() => setCursorSize(300)}
+        onMouseLeave={() => setCursorSize(40)}
       />
 
       <div className="mt-[50px] flex md:flex-row flex-col justify-between items-center gap-[10px]">
@@ -30,6 +35,8 @@ const Footer = () => {
               key={link.title}
               to={link.to}
               className="text-[15px] hover:opacity-70 transition-all"
+              onMouseOver={() => setCursorSize(60)}
+              onMouseLeave={() => setCursorSize(40)}
             >
               {link.title}
             </Link>
@@ -42,6 +49,8 @@ const Footer = () => {
               key={social.alt}
               to={social.to}
               className="w-[25px] h-[25px] hover:opacity-70 transition-all"
+              onMouseOver={() => setCursorSize(60)}
+              onMouseLeave={() => setCursorSize(40)}
             >
               <img src={social.imageSrc} alt={social.alt} />
             </Link>

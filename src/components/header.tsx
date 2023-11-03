@@ -1,11 +1,14 @@
 import { Fragment, useState, useRef } from 'react'
 import { Link } from 'react-router-dom'
+import useCursorSize from '../lib/use-cursor-size'
 import HamburgerMenu from './hamburger-menu'
 import MobileDrawer from './mobile-drawer'
 
 const Header = () => {
   const [drawerOpened, setDrawerOpened] = useState(false)
   const drawerRef = useRef(null)
+  const { setCursorSize } = useCursorSize()
+
   const links = [
     { title: 'About us', to: '/' },
     { title: 'Services', to: '/' },
@@ -19,6 +22,8 @@ const Header = () => {
           <Link
             to="/"
             className="text-white/60 hover:text-white text-[50px] font-humane font-bold leading-normal tracking-normal hover:tracking-wider transition-[letter-spacing]"
+            onMouseOver={() => setCursorSize(100)}
+            onMouseLeave={() => setCursorSize(40)}
           >
             MEDIA UNBOTHERED
           </Link>
@@ -34,7 +39,12 @@ const Header = () => {
         <nav className="sm:flex hidden gap-[15px] items-center text-[15px]">
           {links.map((link, index) => (
             <Fragment key={link.title}>
-              <Link to={link.to} className="hover:opacity-70 transition-all">
+              <Link
+                to={link.to}
+                className="hover:opacity-70 transition-all"
+                onMouseOver={() => setCursorSize(60)}
+                onMouseLeave={() => setCursorSize(40)}
+              >
                 {link.title}
               </Link>
               {index !== links.length - 1 && (
