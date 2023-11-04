@@ -38,7 +38,7 @@ const OurServicesSection = () => {
             onMouseOver={() => setCursorSize(180)}
             onMouseLeave={() => setCursorSize(40)}
           >
-            <h1 className="xl:text-[100px] text-[7.14vw] leading-none py-4">
+            <h1 className="xl:text-[100px] text-[7.14vw] leading-none py-4 whitespace-nowrap">
               {service.title}
             </h1>
             <p className="text-white/60 md:text-[20px] self-end text-[12px] font-normal underline md:mb-[2vw] mb-[3vw] group-hover:opacity-0">

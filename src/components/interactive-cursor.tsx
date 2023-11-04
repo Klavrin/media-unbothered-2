@@ -1,9 +1,15 @@
 import { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
 
+type CursorState = {
+  cursor: {
+    size: number
+  }
+}
+
 const InteractiveCursor = () => {
   const [position, setPosition] = useState({ x: 0, y: 0 })
-  const cursorSize = useSelector((state: any) => state.cursor.size)
+  const cursorSize = useSelector((state: CursorState) => state.cursor.size)
 
   useEffect(() => {
     const handleMouseMovement = (e: MouseEvent) => {

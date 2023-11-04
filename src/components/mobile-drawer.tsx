@@ -39,7 +39,7 @@ const MobileDrawer = ({
 
   const closeDrawerWithAnimation = async () => {
     await gsap.to(drawerRef.current, {
-      y: -window.innerHeight,
+      y: -window.innerHeight - 500,
       ease: 'expo.inOut',
       duration: 1
     })
@@ -50,7 +50,7 @@ const MobileDrawer = ({
     <div
       ref={drawerRef}
       className={`w-screen h-screen bg-black text-white text-center flex sm:hidden flex-col fixed right-0 top-0 z-40`}
-      style={{ transform: `translateY(-${window.innerHeight + 20}px)` }}
+      style={{ transform: `translateY(-${window.innerHeight + 500}px)` }}
     >
       <img
         src="./src/assets/mobile-drawer-close.svg"

@@ -16,7 +16,7 @@ const Header = () => {
   ]
 
   return (
-    <header className="w-screen absolute">
+    <header className="w-screen absolute z-50">
       <div className="max-w-[1400px] h-[75px] mx-auto xl:px-[75px] px-[18px] text-white flex justify-between items-center transition-[padding] duration-500">
         <div className="sm:static absolute left-0 sm:w-auto w-screen text-center">
           <Link
