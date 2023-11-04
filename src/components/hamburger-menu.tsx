@@ -11,7 +11,7 @@ const HamburgerMenu = ({ openDrawer, drawerRef }: HamburgerMenuProps) => {
     openDrawer()
     gsap.to(drawerRef.current, {
       y: 0,
-      ease: 'expo.inOut',
+      ease: 'expo.out',
       duration: 1
     })
   }

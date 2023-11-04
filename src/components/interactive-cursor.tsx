@@ -23,7 +23,7 @@ const InteractiveCursor = () => {
 
   return (
     <div
-      className="rounded-full bg-white fixed z-50 pointer-events-none transition-all duration-[0.05] ease-out mix-blend-difference lg:block hidden opacity-90"
+      className="rounded-full bg-white fixed z-50 pointer-events-none transition-all duration-[0.05] ease-out mix-blend-difference xl:block hidden opacity-90"
       style={{
         width: cursorSize,
         height: cursorSize,
