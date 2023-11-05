@@ -1,9 +1,11 @@
 import { useRef, Fragment } from 'react'
 import useCursorSize from '../../../lib/use-cursor-size'
+import { useTranslation } from 'react-i18next'
 
 const OurServicesSection = () => {
   const rootRef = useRef(null)
   const { setCursorSize } = useCursorSize()
+  const { t } = useTranslation()
 
   const services = [
     {
@@ -27,7 +29,7 @@ const OurServicesSection = () => {
   return (
     <section ref={rootRef} className="md:py-[130px] py-[50px]">
       <h2 className="text-white/80 text-xl font-normal leading-normal mb-[21px]">
-        Our services
+        {t('Our services')}
       </h2>
 
       {services.map((service, index) => (
@@ -39,10 +41,10 @@ const OurServicesSection = () => {
             onMouseLeave={() => setCursorSize(40)}
           >
             <h1 className="xl:text-[100px] text-[7.14vw] leading-none py-4 whitespace-nowrap">
-              {service.title}
+              {t(service.title)}
             </h1>
             <p className="text-white/60 md:text-[20px] self-end text-[12px] font-normal underline md:mb-[2vw] mb-[3vw] group-hover:opacity-0">
-              {service.sideText}
+              {t(service.sideText)}
             </p>
           </div>
           {index !== services.length - 1 && (

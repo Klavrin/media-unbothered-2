@@ -3,8 +3,20 @@ import WhyUsSection from './sections/why-us-section'
 import OurServicesSection from './sections/our-services-section'
 import ReadyToChatSection from './sections/ready-to-chat-section'
 import InteractiveCursor from '../../components/interactive-cursor'
+import { useTranslation } from 'react-i18next'
+import { useEffect } from 'react'
 
-const LandingPage = () => {
+type LandingPageProps = {
+  language?: string | 'en'
+}
+
+const LandingPage = ({ language = 'en' }: LandingPageProps) => {
+  const { i18n } = useTranslation()
+
+  useEffect(() => {
+    i18n.changeLanguage(language)
+  }, [i18n, language])
+
   return (
     <>
       <InteractiveCursor />

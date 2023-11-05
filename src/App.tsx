@@ -10,6 +10,7 @@ const App = () => {
       <main className="overflow-hidden">
         <Routes>
           <Route path="/" element={<LandingPage />} />
+          <Route path="/ro" element={<LandingPage language="ro" />} />
         </Routes>
       </main>
       <Footer />

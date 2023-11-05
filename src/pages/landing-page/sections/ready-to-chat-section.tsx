@@ -1,14 +1,16 @@
 import CustomButton from '../../../components/custom-button'
 import DashedButton from '../../../components/dashed-button'
 import useCursorSize from '../../../lib/use-cursor-size'
+import { useTranslation } from 'react-i18next'
 
 const ReadyToChatSection = () => {
   const { setCursorSize } = useCursorSize()
+  const { t } = useTranslation()
 
   return (
     <section className="md:py-[130px] py-[50px]">
       <h2 className="text-white/80 text-xl font-normal leading-normal mb-[37px]">
-        Ready to have a chat?
+        {t('Ready to have a chat?')}
       </h2>
 
       <p
@@ -16,9 +18,9 @@ const ReadyToChatSection = () => {
         onMouseOver={() => setCursorSize(80)}
         onMouseLeave={() => setCursorSize(40)}
       >
-        Let's turn your digital aspirations into a strategic masterpiece. Whether it's
-        crafting a stunning website or orchestrating ad campaigns that resonate, we're
-        here to amplify your online success. Click, connect, conquer!
+        {t(
+          "Let's turn your digital aspirations into a strategic masterpiece. Whether it's crafting a stunning website or orchestrating ad campaigns that resonate, we're here to amplify your online success. Click, connect, conquer!"
+        )}
       </p>
 
       <div className="flex justify-center md:gap-[46px] gap-[18px] mt-[66px]">

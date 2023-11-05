@@ -1,15 +1,17 @@
 import CustomButton from '../../../components/custom-button'
 import HireUsButton from '../../../components/hire-us-button'
 import useCursorSize from '../../../lib/use-cursor-size'
+import { useTranslation } from 'react-i18next'
 
 const CoverSection = () => {
   const { setCursorSize } = useCursorSize()
+  const { t } = useTranslation()
 
   return (
     <section className="xl:h-screen h-full pb-[50px] pt-[120px] flex flex-col justify-center">
       <div className="flex flex-col ">
         <h1 className="xl:text-[4rem] sm:text-[5vw] text-[28px] font-medium leading-normal">
-          At
+          {t('At')}
         </h1>
         <img
           src="./src/assets/media-unbothered.svg"
@@ -19,7 +21,7 @@ const CoverSection = () => {
           onMouseLeave={() => setCursorSize(40)}
         />
         <h1 className="xl:text-[4rem] sm:text-[5vw] text-[28px] font-medium leading-normal">
-          we defy the odds.
+          {t('we defy the odds.')}
         </h1>
       </div>
 
@@ -29,10 +31,9 @@ const CoverSection = () => {
           onMouseOver={() => setCursorSize(80)}
           onMouseLeave={() => setCursorSize(40)}
         >
-          Welcome to Media Unbothered, where digital dreams become reality. We're not just
-          another agency—we're the architects of exceptional web development and the
-          maestros of Facebook, Instagram, and Google ads. Unleash the power of your
-          online presence with us. Stay ahead, stay unbothered.
+          {t(
+            "Welcome to Media Unbothered, where digital dreams become reality. We're not just another agency—we're the architects of exceptional web development and the maestros of Facebook, Instagram, and Google ads. Unleash the power of your online presence with us. Stay ahead, stay unbothered."
+          )}
         </p>
 
         <HireUsButton />

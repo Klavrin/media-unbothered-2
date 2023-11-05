@@ -1,4 +1,5 @@
 import useCursorSize from '../lib/use-cursor-size'
+import { useTranslation } from 'react-i18next'
 
 type CustomButtonProps = {
   innerText: string
@@ -14,6 +15,7 @@ const CustomButton = ({
   hideForWideScreens
 }: CustomButtonProps) => {
   const { setCursorSize } = useCursorSize()
+  const { t } = useTranslation()
 
   return (
     <div className={`flex items-center ${hideForWideScreens && 'md:hidden'}`}>
@@ -22,7 +24,7 @@ const CustomButton = ({
         onMouseOver={() => setCursorSize(180)}
         onMouseLeave={() => setCursorSize(40)}
       >
-        {innerText}
+        {t(innerText)}
       </button>
 
       {!hideForWideScreens && (

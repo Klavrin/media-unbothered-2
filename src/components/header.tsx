@@ -3,11 +3,13 @@ import { Link } from 'react-router-dom'
 import useCursorSize from '../lib/use-cursor-size'
 import HamburgerMenu from './hamburger-menu'
 import MobileDrawer from './mobile-drawer'
+import { useTranslation } from 'react-i18next'
 
 const Header = () => {
   const [drawerOpened, setDrawerOpened] = useState(false)
   const drawerRef = useRef(null)
   const { setCursorSize } = useCursorSize()
+  const { t } = useTranslation()
 
   const links = [
     { title: 'About us', to: '/' },
@@ -45,7 +47,7 @@ const Header = () => {
                 onMouseOver={() => setCursorSize(60)}
                 onMouseLeave={() => setCursorSize(40)}
               >
-                {link.title}
+                {t(link.title)}
               </Link>
               {index !== links.length - 1 && (
                 <img src="./src/assets/ellipse.svg" alt="" className="-z-50" />

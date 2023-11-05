@@ -1,13 +1,15 @@
 import { Link } from 'react-router-dom'
 import useCursorSize from '../lib/use-cursor-size'
+import { useTranslation } from 'react-i18next'
 
 const Footer = () => {
   const { setCursorSize } = useCursorSize()
+  const { t } = useTranslation()
 
   const links = [
     { title: 'HOME', to: '/' },
     { title: 'ABOUT US', to: '/' },
-    { title: 'PRICACY POLICY', to: '/' },
+    { title: 'PRIVACY POLICY', to: '/' },
     { title: 'USAGE MANUAL', to: '/' }
   ]
 
@@ -38,7 +40,7 @@ const Footer = () => {
               onMouseOver={() => setCursorSize(60)}
               onMouseLeave={() => setCursorSize(40)}
             >
-              {link.title}
+              {t(link.title)}
             </Link>
           ))}
         </nav>

@@ -1,6 +1,7 @@
 import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import gsap from 'gsap'
+import { useTranslation } from 'react-i18next'
 
 type MobileDrawerProps = {
   links: { title: string; to: string }[]
@@ -15,6 +16,8 @@ const MobileDrawer = ({
   closeDrawer,
   drawerRef
 }: MobileDrawerProps) => {
+  const { t } = useTranslation()
+
   useEffect(() => {
     const handleResize = () => {
       if (drawerOpened && window.innerWidth < 640) {
@@ -65,7 +68,7 @@ const MobileDrawer = ({
             key={link.title}
             className="text-6xl font-semibold opacity-80 hover:opacity-100 transition-all"
           >
-            {link.title}
+            {t(link.title)}
           </Link>
         ))}
       </div>

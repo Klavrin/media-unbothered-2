@@ -1,4 +1,5 @@
 import useCursorSize from '../lib/use-cursor-size'
+import { useTranslation } from 'react-i18next'
 
 type DashedButtonProps = {
   innerText: string
@@ -7,6 +8,7 @@ type DashedButtonProps = {
 
 const DashedButton = ({ innerText, styles }: DashedButtonProps) => {
   const { setCursorSize } = useCursorSize()
+  const { t } = useTranslation()
 
   return (
     <button
@@ -14,7 +16,7 @@ const DashedButton = ({ innerText, styles }: DashedButtonProps) => {
       onMouseOver={() => setCursorSize(110)}
       onMouseLeave={() => setCursorSize(40)}
     >
-      {innerText}
+      {t(innerText)}
     </button>
   )
 }
