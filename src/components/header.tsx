@@ -1,9 +1,10 @@
 import { Fragment, useState, useRef } from 'react'
 import { Link } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
 import useCursorSize from '../lib/use-cursor-size'
 import HamburgerMenu from './hamburger-menu'
 import MobileDrawer from './mobile-drawer'
-import { useTranslation } from 'react-i18next'
+import LanguageDropdownMenu from './language-dropdown-menu'
 
 const Header = () => {
   const [drawerOpened, setDrawerOpened] = useState(false)
@@ -39,7 +40,7 @@ const Header = () => {
         />
         <HamburgerMenu drawerRef={drawerRef} openDrawer={() => setDrawerOpened(true)} />
         <nav className="sm:flex hidden gap-[15px] items-center text-[15px]">
-          {links.map((link, index) => (
+          {links.map((link) => (
             <Fragment key={link.title}>
               <Link
                 to={link.to}
@@ -49,11 +50,10 @@ const Header = () => {
               >
                 {t(link.title)}
               </Link>
-              {index !== links.length - 1 && (
-                <img src="./src/assets/ellipse.svg" alt="" className="-z-50" />
-              )}
+              <img src="./src/assets/ellipse.svg" alt="" className="-z-50" />
             </Fragment>
           ))}
+          <LanguageDropdownMenu />
         </nav>
       </div>
     </header>
