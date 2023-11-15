@@ -1,21 +1,23 @@
 import { useState } from 'react'
-import i18next from 'i18next'
 import useCursorSize from '../lib/use-cursor-size'
+import { useDispatch, useSelector } from 'react-redux'
+import { setLanguage } from '../store/reducers/language-slice'
+
+type StateType = {
+  language: {
+    language: string
+  }
+}
 
 const LanguageDropdownMenu = () => {
-  const [currentLanguage, setCurrentLanguage] = useState(
-    localStorage.getItem('language')
-      ? localStorage.getItem('language')
-      : navigator.language.split('-')[0]
-  )
+  const currentLanguage = useSelector((state: StateType) => state.language.language)
   const [dropdownVisible, setDropdownVisible] = useState(false)
   const { setCursorSize } = useCursorSize()
+  const dispatch = useDispatch()
 
   const onClickOption = (language: string) => {
-    setCurrentLanguage(language)
-    i18next.changeLanguage(language)
+    dispatch(setLanguage(language))
     setDropdownVisible(false)
-    localStorage.setItem('language', language)
   }
 
   const languages = [
@@ -31,10 +33,11 @@ const LanguageDropdownMenu = () => {
         onMouseOver={() => setCursorSize(50)}
         onMouseLeave={() => setCursorSize(40)}
       >
-        {languages.map(
-          (lang) =>
-            lang.value === currentLanguage && <p key={lang.language}>{lang.language}</p>
-        )}
+        {languages
+          .filter((lang) => lang.value === currentLanguage)
+          .map((lang) => (
+            <p key={lang.language}>{lang.language}</p>
+          ))}
         <img src="./src/assets/dropdown-menu-icon.svg" className="w-[12px]" />
       </div>
 
@@ -62,3 +65,8 @@ const LanguageDropdownMenu = () => {
 }
 
 export default LanguageDropdownMenu
+
+// setCurrentLanguage(language)
+// i18next.changeLanguage(language)
+// setDropdownVisible(false)
+// localStorage.setItem('language', language)

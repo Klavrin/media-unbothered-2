@@ -2,6 +2,7 @@ import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import gsap from 'gsap'
 import { useTranslation } from 'react-i18next'
+import MobileLanguageDropdownMenu from './mobile-language-dropdown-menu'
 
 type MobileDrawerProps = {
   links: { title: string; to: string }[]
@@ -71,6 +72,7 @@ const MobileDrawer = ({
             {t(link.title)}
           </Link>
         ))}
+        <MobileLanguageDropdownMenu />
       </div>
     </div>
   )
