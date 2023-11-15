@@ -3,14 +3,14 @@ import useCursorSize from '../lib/use-cursor-size'
 import { useDispatch, useSelector } from 'react-redux'
 import { setLanguage } from '../store/reducers/language-slice'
 
-type StateType = {
+type LanguageState = {
   language: {
     language: string
   }
 }
 
 const LanguageDropdownMenu = () => {
-  const currentLanguage = useSelector((state: StateType) => state.language.language)
+  const currentLanguage = useSelector((state: LanguageState) => state.language.language)
   const [dropdownVisible, setDropdownVisible] = useState(false)
   const { setCursorSize } = useCursorSize()
   const dispatch = useDispatch()
