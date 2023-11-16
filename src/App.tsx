@@ -8,11 +8,10 @@ import i18next from 'i18next'
 
 const App = () => {
   useEffect(() => {
-    i18next.changeLanguage(
-      localStorage.getItem('language')
-        ? localStorage.getItem('language')
-        : navigator.language.split('-')[0]
-    )
+    const storedLanguage = localStorage.getItem('language')
+    const language = storedLanguage ? storedLanguage : navigator.language.split('-')[0]
+
+    if (language) i18next.changeLanguage(language)
   }, [])
 
   return (

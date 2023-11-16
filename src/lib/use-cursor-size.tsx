@@ -5,7 +5,7 @@ const useCursorSize = () => {
   const dispatch = useDispatch()
 
   const setCursorSize = (size: number) => {
-    dispatch(setSize(size))
+    window.innerWidth >= 1280 && dispatch(setSize(size))
   }
 
   return { setCursorSize }

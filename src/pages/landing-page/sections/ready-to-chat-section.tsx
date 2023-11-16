@@ -30,11 +30,7 @@ const ReadyToChatSection = () => {
           styles="xl:px-[117px] md:px-[8.35vw] px-[53px] py-[10px] xl:text-[60px] text-[4.28vw]"
           imgStyles="xl:min-w-[70px] sm:min-w-[5vw] min-w-[30px]"
         />
-        <DashedButton
-          innerText="About us"
-          // styles="md:-translate-x-0 -translate-x-[5vw]"
-          // styles="-translate-x-[4.7vw]"
-        />
+        <DashedButton innerText="About us" />
       </div>
     </section>
   )

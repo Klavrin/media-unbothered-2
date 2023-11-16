@@ -15,13 +15,9 @@ const langaugeSlice = createSlice({
       i18next.changeLanguage(action.payload)
       localStorage.setItem('language', action.payload)
       state.language = action.payload
-    },
-
-    getLanguage: (language) => {
-      return language
     }
   }
 })
 
-export const { setLanguage, getLanguage } = langaugeSlice.actions
+export const { setLanguage } = langaugeSlice.actions
 export default langaugeSlice.reducer

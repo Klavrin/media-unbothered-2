@@ -13,7 +13,7 @@ const InteractiveCursor = () => {
 
   useEffect(() => {
     const handleMouseMovement = (e: MouseEvent) => {
-      setPosition({ x: e.clientX, y: e.clientY })
+      window.innerWidth >= 1280 && setPosition({ x: e.clientX, y: e.clientY })
     }
 
     window.addEventListener('mousemove', handleMouseMovement)
