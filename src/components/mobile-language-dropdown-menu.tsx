@@ -49,7 +49,7 @@ const MobileLanguageDropdownMenu = () => {
           .map((lang) => (
             <button
               key={lang.language}
-              className="text-2xl text-start"
+              className="text-4xl font-normal opacity-80 hover:opacity-100 transition-all"
               onClick={() => onClickButton(lang.value)}
             >
               {lang.language}

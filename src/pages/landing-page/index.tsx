@@ -4,6 +4,10 @@ import OurServicesSection from './sections/our-services-section'
 import ReadyToChatSection from './sections/ready-to-chat-section'
 import InteractiveCursor from '../../components/interactive-cursor'
 
+/**
+ * @todo: Fix the bug that makes the last section's arrow shift away when there's text other than "Let's talk."
+ */
+
 const LandingPage = () => {
   return (
     <>

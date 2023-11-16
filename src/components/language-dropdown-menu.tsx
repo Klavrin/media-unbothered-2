@@ -1,7 +1,7 @@
 import { useState } from 'react'
-import useCursorSize from '../lib/use-cursor-size'
 import { useDispatch, useSelector } from 'react-redux'
 import { setLanguage } from '../store/reducers/language-slice'
+import useCursorSize from '../lib/use-cursor-size'
 
 type LanguageState = {
   language: {

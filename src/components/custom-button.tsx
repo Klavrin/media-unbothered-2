@@ -18,31 +18,19 @@ const CustomButton = ({
   const { t } = useTranslation()
 
   return (
-    <div className={`flex items-center ${hideForWideScreens && 'md:hidden'}`}>
-      <button
-        className={`bg-white text-black rounded-[56px] whitespace-nowrap ${styles}`}
-        onMouseOver={() => setCursorSize(180)}
-        onMouseLeave={() => setCursorSize(40)}
-      >
-        {t(innerText)}
-      </button>
+    <div className={`flex ${hideForWideScreens && 'md:hidden'}`}>
+      <div className="flex items-center relative">
+        <button
+          className={`bg-white text-black rounded-[56px] whitespace-nowrap flex items-center ${styles}`}
+          onMouseOver={() => setCursorSize(180)}
+          onMouseLeave={() => setCursorSize(40)}
+        >
+          {t(innerText)}
+        </button>
 
-      {!hideForWideScreens && (
         <img
           src="./src/assets/custom-button-arrow.svg"
-          className={`relative right-6 pointer-events-none block md:hidden ${imgStyles}`}
-        />
-      )}
-      <div
-        className={
-          !hideForWideScreens
-            ? 'absolute xl:translate-x-[500px] translate-x-[35.71vw] md:block hidden'
-            : ''
-        }
-      >
-        <img
-          src="./src/assets/custom-button-arrow.svg"
-          className={`relative right-6 pointer-events-none ${imgStyles}`}
+          className={`absolute 2xl:-right-7 right-[-2vw] pointer-events-none ${imgStyles}`}
         />
       </div>
     </div>
