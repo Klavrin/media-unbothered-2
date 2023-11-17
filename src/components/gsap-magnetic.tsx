@@ -36,10 +36,10 @@ const GsapMagnetic = ({ children }: GsapMagneticProps) => {
     ref.current!.addEventListener('mousemove', mouseMove)
     ref.current!.addEventListener('mouseleave', mouseLeave)
 
-    return () => {
-      ref.current!.removeEventListener('mousemove', mouseMove)
-      ref.current!.removeEventListener('mouseleave', mouseLeave)
-    }
+    // return () => {
+    //   ref.current!.removeEventListener('mousemove', mouseMove)
+    //   ref.current!.removeEventListener('mouseleave', mouseLeave)
+    // }
   }, [])
 
   return (

@@ -9,7 +9,7 @@ const ReadyToChatSection = () => {
 
   return (
     <section className="md:py-[130px] py-[50px]">
-      <h2 className="text-white/80 xl:text-xl text-base font-normal leading-normal md:mb-[37px] mb-5">
+      <h2 className="text-white/80 md:text-xl text-base font-normal leading-normal md:mb-[37px] mb-5">
         {t('Ready to have a chat?')}
       </h2>
 

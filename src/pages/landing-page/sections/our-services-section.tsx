@@ -1,6 +1,7 @@
 import { useRef, Fragment } from 'react'
 import useCursorSize from '../../../lib/use-cursor-size'
 import { useTranslation } from 'react-i18next'
+import { Link } from 'react-router-dom'
 
 const OurServicesSection = () => {
   const rootRef = useRef(null)
@@ -10,19 +11,23 @@ const OurServicesSection = () => {
   const services = [
     {
       title: 'Web development',
-      sideText: 'Check it out!'
+      sideText: 'Check it out!',
+      to: '/web-development'
     },
     {
       title: 'Web design',
-      sideText: 'Have a look!'
+      sideText: 'Have a look!',
+      to: '/web-development'
     },
     {
       title: 'Maintenance',
-      sideText: 'Explore!'
+      sideText: 'Explore!',
+      to: '/web-development'
     },
     {
       title: 'SEO',
-      sideText: 'Peek in!'
+      sideText: 'Peek in!',
+      to: '/web-development'
     }
   ]
 
@@ -34,19 +39,20 @@ const OurServicesSection = () => {
 
       {services.map((service, index) => (
         <Fragment key={service.title}>
-          <div
+          <Link
+            to={service.to}
             id={`service-${index}`}
-            className="group flex gap-4 cursor-pointer hover:text-black hover:bg-gradient-to-r from-white/60 via-white to-white/60 md:hover:pl-16 hover:pl-6 transition-all md:pt-4 pt-2"
+            className="group flex gap-4 hover:text-black hover:bg-gradient-to-r from-white/60 via-white to-white/60 md:hover:pl-16 hover:pl-6 transition-all md:pt-4 pt-2"
             onMouseOver={() => setCursorSize(180)}
             onMouseLeave={() => setCursorSize(40)}
           >
             <h1 className="xl:text-[100px] text-[7.14vw] leading-none py-4 whitespace-nowrap">
               {t(service.title)}
             </h1>
-            <p className="text-white/60 md:text-[20px] self-end text-[12px] font-normal underline md:mb-[2vw] mb-[3vw] group-hover:opacity-0">
+            <p className="text-white/60 md:text-[20px] text-[10px] self-end  font-normal underline md:mb-[2vw] mb-[3vw] group-hover:opacity-0">
               {t(service.sideText)}
             </p>
-          </div>
+          </Link>
           {index !== services.length - 1 && (
             <hr className="w-full h-[2px] bg-white opacity-40 rounded-full" />
           )}
