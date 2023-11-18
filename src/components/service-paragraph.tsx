@@ -32,7 +32,7 @@ const ServiceParagraph = ({ title, paragraph }: ParagraphProps) => {
         ) : (
           <>
             {t(paragraph.par1)}
-            <button className="underline">{t(x.par2)}</button>
+            <span className="underline cursor-pointer">{t(x.par2)}</span>
             {t(paragraph.par3)}
           </>
         )}

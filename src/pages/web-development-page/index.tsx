@@ -1,3 +1,4 @@
+import { Fragment } from 'react'
 import WebDevCoverSection from './sections/wev-dev-cover-section'
 import ReadyToChatSection from '../landing-page/sections/ready-to-chat-section'
 import ServiceParagraph from '../../components/service-paragraph'
@@ -44,13 +45,13 @@ const WebDevelopmentPage = () => {
   ]
 
   return (
-    <div className="max-w-[1400px] mx-auto text-white xl:px-[75px] px-[18px]">
+    <div className="max-w-[1400px] mx-auto text-white xl:px-[75px] px-[18px] transform-gpu">
       <WebDevCoverSection />
       {paragraphs.map((para) => (
-        <>
+        <Fragment key={para.title}>
           <hr className="w-full h-[2px] bg-white opacity-40 rounded-full" />
           <ServiceParagraph title={para.title} paragraph={para.paragraph} />
-        </>
+        </Fragment>
       ))}
       <hr className="w-full h-[2px] bg-white opacity-40 rounded-full" />
       <ReadyToChatSection />
