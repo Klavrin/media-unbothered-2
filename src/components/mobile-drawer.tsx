@@ -53,7 +53,7 @@ const MobileDrawer = ({
   return (
     <div
       ref={drawerRef}
-      className={`w-screen h-screen bg-black text-white text-center flex sm:hidden flex-col fixed right-0 top-0 z-40`}
+      className={`w-screen h-[100dvh] bg-black text-white text-center flex sm:hidden flex-col fixed right-0 top-0 z-40`}
       style={{ transform: `translateY(-${window.innerHeight + 500}px)` }}
     >
       <img

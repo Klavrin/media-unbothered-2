@@ -6,6 +6,9 @@ import Footer from './components/footer'
 import InteractiveCursor from './components/interactive-cursor'
 import LandingPage from './pages/landing-page'
 import WebDevelopmentPage from './pages/web-development-page'
+import WebDesignPage from './pages/web-design-page'
+import SeoPage from './pages/seo-page'
+import MaintenanceAndSupportPage from './pages/maintenance-and-support-page'
 import PageNotFound from './pages/404-page'
 
 const App = () => {
@@ -24,6 +27,9 @@ const App = () => {
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="web-development" element={<WebDevelopmentPage />} />
+          <Route path="web-design" element={<WebDesignPage />} />
+          <Route path="seo" element={<SeoPage />} />
+          <Route path="maintenance-&-support" element={<MaintenanceAndSupportPage />} />
           <Route path="*" element={<PageNotFound />} />
         </Routes>
       </main>

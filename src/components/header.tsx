@@ -24,7 +24,7 @@ const Header = () => {
         <div className="sm:static absolute left-0 sm:w-auto w-screen text-center">
           <Link
             to="/"
-            className="text-white/60 hover:text-white text-[50px] font-humane font-bold leading-normal tracking-normal hover:tracking-wider transition-[letter-spacing]"
+            className="text-white/60 sm:hover:text-white text-[50px] font-humane font-bold leading-normal tracking-normal sm:hover:tracking-wider transition-[letter-spacing]"
             onMouseOver={() => setCursorSize(100)}
             onMouseLeave={() => setCursorSize(40)}
           >

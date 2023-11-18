@@ -3,7 +3,7 @@ import HireUsButton from '../../../components/hire-us-button'
 import useCursorSize from '../../../lib/use-cursor-size'
 import { useTranslation } from 'react-i18next'
 
-const WebDevCoverSection = () => {
+const WebDesignCoverSection = () => {
   const { setCursorSize } = useCursorSize()
   const { t } = useTranslation()
 
@@ -11,7 +11,7 @@ const WebDevCoverSection = () => {
     <section className="xl:h-screen h-full pb-[50px] pt-[120px] flex flex-col justify-center">
       <div className="flex flex-col ">
         <img
-          src="./src/assets/service-header-texts/web-development.svg"
+          src="./src/assets/service-header-texts/web-design.svg"
           alt="Media Unbothered"
           className="self-start xl:h-[256px] h-[18.28vw]"
           onMouseOver={() => setCursorSize(300)}
@@ -45,4 +45,4 @@ const WebDevCoverSection = () => {
   )
 }
 
-export default WebDevCoverSection
+export default WebDesignCoverSection

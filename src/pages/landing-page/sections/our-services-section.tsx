@@ -17,17 +17,17 @@ const OurServicesSection = () => {
     {
       title: 'Web design',
       sideText: 'Have a look!',
-      to: '/web-development'
+      to: '/web-design'
     },
     {
       title: 'Maintenance',
       sideText: 'Explore!',
-      to: '/web-development'
+      to: '/maintenance-&-support'
     },
     {
       title: 'SEO',
       sideText: 'Peek in!',
-      to: '/web-development'
+      to: '/seo'
     }
   ]
 
