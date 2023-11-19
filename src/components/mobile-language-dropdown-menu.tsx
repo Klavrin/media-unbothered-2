@@ -40,6 +40,7 @@ const MobileLanguageDropdownMenu = () => {
           className={`w-[24px] transition-all duration-300 ${
             dropdownVisible ? 'rotate-180' : 'rotate-0'
           }`}
+          loading="lazy"
         />
       </div>
 

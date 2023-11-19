@@ -21,13 +21,14 @@ const Footer = () => {
   ]
 
   return (
-    <footer className="max-w-[1400px] mx-auto xl:px-[75px] px-[18px] pt-10 pb-5 text-white">
+    <footer className="max-w-[1400px] mx-auto xl:px-[75px] px-[18px] pt-10 pb-5 text-white transform-gpu">
       <img
         src="./src/assets/media-unbothered.svg"
         alt="Media Unbothered"
         className="w-screen -z-50"
         onMouseOver={() => setCursorSize(300)}
         onMouseLeave={() => setCursorSize(40)}
+        loading="lazy"
       />
 
       <div className="mt-[50px] flex md:flex-row flex-col justify-between items-center gap-[10px]">
@@ -54,7 +55,7 @@ const Footer = () => {
               onMouseOver={() => setCursorSize(60)}
               onMouseLeave={() => setCursorSize(40)}
             >
-              <img src={social.imageSrc} alt={social.alt} />
+              <img src={social.imageSrc} alt={social.alt} loading="lazy" />
             </Link>
           ))}
         </div>

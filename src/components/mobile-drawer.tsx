@@ -60,6 +60,7 @@ const MobileDrawer = ({
         src="./src/assets/mobile-drawer-close.svg"
         onClick={closeDrawerWithAnimation}
         className="w-[30px] self-end mt-6 mr-4 cursor-pointer"
+        loading="lazy"
       />
 
       <div className="h-full flex flex-col justify-center gap-4">

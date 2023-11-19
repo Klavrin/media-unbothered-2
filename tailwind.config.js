@@ -6,9 +6,6 @@ export default {
       fontFamily: {
         humane: 'Humane, sans-serif',
         nohemi: 'Nohemi, sans-serif'
-      },
-      backgroundImage: {
-        main: "url('./src/assets/Background.svg')"
       }
     }
   },

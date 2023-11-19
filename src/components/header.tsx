@@ -19,7 +19,7 @@ const Header = () => {
   ]
 
   return (
-    <header className="w-screen absolute z-50">
+    <header className="w-screen absolute z-50 transform-gpu">
       <div className="max-w-[1400px] h-[75px] mx-auto xl:px-[75px] px-[18px] text-white flex justify-between items-center transition-[padding] duration-500">
         <div className="sm:static absolute left-0 sm:w-auto w-screen text-center">
           <Link
@@ -50,7 +50,12 @@ const Header = () => {
               >
                 {t(link.title)}
               </Link>
-              <img src="./src/assets/ellipse.svg" alt="" className="-z-50" />
+              <img
+                src="./src/assets/ellipse.svg"
+                alt=""
+                className="-z-50"
+                loading="lazy"
+              />
             </Fragment>
           ))}
           <LanguageDropdownMenu />

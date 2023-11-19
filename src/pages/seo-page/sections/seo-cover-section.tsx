@@ -16,6 +16,7 @@ const SeoCoverSection = () => {
           className="self-start xl:h-[256px] h-[18.28vw]"
           onMouseOver={() => setCursorSize(300)}
           onMouseLeave={() => setCursorSize(40)}
+          loading="lazy"
         />
         <h1 className="xl:text-[4rem] sm:text-[5vw] text-[28px] font-medium leading-normal">
           {t('with Media Unbothered.')}

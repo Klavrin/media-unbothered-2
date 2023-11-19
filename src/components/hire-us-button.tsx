@@ -13,10 +13,12 @@ const HireUsButton = () => {
           alt="Hire us"
           onMouseOver={() => setCursorSize(150)}
           onMouseLeave={() => setCursorSize(40)}
+          loading="lazy"
         />
         <img
           src="./src/assets/hire-us-arrow.svg"
           className="absolute pointer-events-none"
+          loading="lazy"
         />
       </GsapMagnetic>
     </div>

@@ -19,6 +19,7 @@ const CoverSection = () => {
           className="w-screen"
           onMouseOver={() => setCursorSize(300)}
           onMouseLeave={() => setCursorSize(40)}
+          loading="lazy"
         />
         <h1 className="xl:text-[4rem] sm:text-[5vw] text-[28px] font-medium leading-normal">
           {t('we defy the odds.')}

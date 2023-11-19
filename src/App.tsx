@@ -3,13 +3,20 @@ import { Routes, Route } from 'react-router-dom'
 import i18next from 'i18next'
 import Header from './components/header'
 import Footer from './components/footer'
-import InteractiveCursor from './components/interactive-cursor'
 import LandingPage from './pages/landing-page'
 import WebDevelopmentPage from './pages/web-development-page'
 import WebDesignPage from './pages/web-design-page'
 import SeoPage from './pages/seo-page'
-import MaintenanceAndSupportPage from './pages/maintenance-and-support-page'
+import MaintenanceAndSupportPage from './pages/maintenance-page'
 import PageNotFound from './pages/404-page'
+import InteractiveCursorGSAP from './components/interactive-cursor-gsap'
+// import InteractiveCursor from './components/interactive-cursor'
+
+/**
+ * @todo: Make the hire us button look nicer on the desktop.
+ * @todo: Try to fix the lagginess in safari.
+ * @todo: Make the animations in safari as smooth as in chrome.
+ */
 
 const App = () => {
   useEffect(() => {
@@ -23,7 +30,7 @@ const App = () => {
     <>
       <Header />
       <main className="overflow-hidden">
-        <InteractiveCursor />
+        <InteractiveCursorGSAP />
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="web-development" element={<WebDevelopmentPage />} />
