@@ -16,15 +16,14 @@ const InteractiveCursorGSAP = () => {
     const handleMouseMovement = (e: MouseEvent) => {
       if (window.innerWidth >= 1280) {
         gsap.to(ref.current, {
-          translateX: e.clientX - cursorSize / 2,
-          translateY: e.clientY - cursorSize / 2,
+          translateX: e.clientX,
+          translateY: e.clientY,
           duration: 0.05
         })
       }
     }
 
     window.addEventListener('mousemove', handleMouseMovement)
-
     return () => window.removeEventListener('mousemove', handleMouseMovement)
   }, [cursorSize])
 
@@ -34,7 +33,8 @@ const InteractiveCursorGSAP = () => {
       className="rounded-full bg-white fixed z-50 pointer-events-none transition-all duration-[0.05] ease-out mix-blend-difference xl:block hidden opacity-90 transform-gpu"
       style={{
         width: cursorSize,
-        height: cursorSize
+        height: cursorSize,
+        margin: -cursorSize / 2
       }}
     ></div>
   )
