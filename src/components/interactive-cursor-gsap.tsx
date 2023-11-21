@@ -12,8 +12,6 @@ const InteractiveCursorGSAP = () => {
   const cursorSize = useSelector((state: CursorState) => state.cursor.size)
   const ref = useRef(null)
 
-  useEffect(() => {}, [])
-
   useEffect(() => {
     const handleMouseMovement = (e: MouseEvent) => {
       if (window.innerWidth >= 1280) {

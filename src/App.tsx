@@ -12,12 +12,6 @@ import PageNotFound from './pages/404-page'
 import InteractiveCursorGSAP from './components/interactive-cursor-gsap'
 // import InteractiveCursor from './components/interactive-cursor'
 
-/**
- * @todo: Make the hire us button look nicer on the desktop.
- * @todo: Try to fix the lagginess in safari.
- * @todo: Make the animations in safari as smooth as in chrome.
- */
-
 const App = () => {
   useEffect(() => {
     const storedLanguage = localStorage.getItem('language')
