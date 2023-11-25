@@ -9,7 +9,7 @@ const Footer = () => {
   const links = [
     { title: 'HOME', to: '/' },
     { title: 'ABOUT US', to: '/' },
-    { title: 'PRIVACY POLICY', to: '/' },
+    { title: 'PRIVACY POLICY', to: '/privacy-policy' },
     { title: 'USAGE MANUAL', to: '/' }
   ]
 

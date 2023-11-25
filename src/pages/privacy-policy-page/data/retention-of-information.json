@@ -1,0 +1,22 @@
+{
+  "title": "RETENTION OF INFORMATION",
+  "description": "We maintain the subsequent personal information for the specified durations:",
+  "dataRetensions": [
+    {
+      "title": "First name",
+      "dataRetentionPeriod": "Data retention period: Until you cease to be a customer or opt out of our email communications."
+    },
+    {
+      "title": "Email address",
+      "dataRetentionPeriod": "Data retention period: Until you cease to be a customer or opt out of our email communications."
+    },
+    {
+      "title": "Products or services purchased, obtained, or considered",
+      "dataRetentionPeriod": "Data retention period: Until you cease to be a customer or opt out of our email communications."
+    },
+    {
+      "title": "Payment method",
+      "dataRetentionPeriod": "Data retention period: Until you cease to be a customer or opt out of our email communications."
+    }
+  ]
+}

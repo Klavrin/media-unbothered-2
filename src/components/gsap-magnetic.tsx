@@ -19,10 +19,9 @@ const GsapMagnetic = ({ children }: GsapMagneticProps) => {
     })
 
     const mouseMove = (e: MouseEvent) => {
-      const { clientX, clientY } = e
       const { width, height, top, left } = ref.current!.getBoundingClientRect()
-      const x = clientX - (left + width / 2)
-      const y = clientY - (top + height / 2)
+      const x = e.clientX - (left + width / 2)
+      const y = e.clientY - (top + height / 2)
 
       xTo(x)
       yTo(y)

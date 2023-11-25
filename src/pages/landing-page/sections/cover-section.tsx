@@ -9,7 +9,7 @@ const CoverSection = () => {
 
   return (
     <section className="xl:h-screen h-full pb-[50px] pt-[120px] flex flex-col justify-center">
-      <div className="flex flex-col ">
+      <div className="flex flex-col">
         <h1 className="xl:text-[4rem] sm:text-[5vw] text-[28px] font-medium leading-normal">
           {t('At')}
         </h1>

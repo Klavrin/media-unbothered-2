@@ -8,9 +8,9 @@ import WebDevelopmentPage from './pages/web-development-page'
 import WebDesignPage from './pages/web-design-page'
 import SeoPage from './pages/seo-page'
 import MaintenanceAndSupportPage from './pages/maintenance-page'
+import PrivacyPolicyPage from './pages/privacy-policy-page'
 import PageNotFound from './pages/404-page'
 import InteractiveCursorGSAP from './components/interactive-cursor-gsap'
-// import InteractiveCursor from './components/interactive-cursor'
 
 const App = () => {
   useEffect(() => {
@@ -31,6 +31,7 @@ const App = () => {
           <Route path="web-design" element={<WebDesignPage />} />
           <Route path="seo" element={<SeoPage />} />
           <Route path="maintenance-&-support" element={<MaintenanceAndSupportPage />} />
+          <Route path="privacy-policy" element={<PrivacyPolicyPage />} />
           <Route path="*" element={<PageNotFound />} />
         </Routes>
       </main>
