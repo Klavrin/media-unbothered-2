@@ -33,7 +33,7 @@ const CoverSection = () => {
           onMouseLeave={() => setCursorSize(40)}
         >
           {t(
-            "Welcome to Media Unbothered, where digital dreams become reality. We're not just another agency—we're the architects of exceptional web development and the maestros of Facebook, Instagram, and Google ads. Unleash the power of your online presence with us. Stay ahead, stay unbothered."
+            "Welcome to Media Unbothered, where digital dreams become reality. At Media Unbothered, we don't just build websites; we craft digital experiences that leave an everlasting impression. In a world where the digital landscape is constantly evolving, we thrive on staying ahead of the curve, unbothered by the ordinary."
           )}
         </p>
 

@@ -19,7 +19,7 @@ const ReadyToChatSection = () => {
         onMouseLeave={() => setCursorSize(40)}
       >
         {t(
-          "Let's turn your digital aspirations into a strategic masterpiece. Whether it's crafting a stunning website or orchestrating ad campaigns that resonate, we're here to amplify your online success. Click, connect, conquer!"
+          "Eager to transform your digital aspirations into a tangible online presence? We're at your service. Whether you have a specific project in mind or are keen on exploring potential opportunities, the Media Unbothered team is prepared for a meaningful discussion."
         )}
       </p>
 

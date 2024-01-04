@@ -14,6 +14,7 @@ import ChangesToPrivacyPolicySection from './sections/changes-to-privacy-policy-
 import InquiriesSection from './sections/inquiries-section'
 
 const PrivacyPolicyPage = () => {
+  //! This needs to be rewritten.
   return (
     <div className="max-w-[1400px] mx-auto text-white xl:px-[75px] px-[18px] transform-gpu text-2xl">
       <IntroductionSection />
@@ -30,6 +31,7 @@ const PrivacyPolicyPage = () => {
       <LocationOfDataProcessingSection />
       <ChangesToPrivacyPolicySection />
       <InquiriesSection />
+      <hr className="w-full h-[2px] bg-white opacity-40 rounded-full mt-[130px]" />
     </div>
   )
 }
