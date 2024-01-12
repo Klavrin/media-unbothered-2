@@ -1,36 +1,50 @@
+import { useTranslation } from 'react-i18next'
+import data from './data/introduction-data.json'
 import IntroductionSection from './sections/introduction-section'
-import InfoCollectionSection from './sections/info-collection-section'
-import PersonalInfoDisclosureSection from './sections/personal-info-disclosure-section'
-import MeasuresToTakeSection from './sections/measures-to-take-section'
-import SaleOfInfoSection from './sections/sale-of-info-section'
-import CookiesSection from './sections/cookies-section'
-import ChildrenPrivacySection from './sections/children-privacy-section'
-import RetentionOfInformationSection from './sections/retention-of-information-section'
-import ThirdPartiesSection from './sections/third-parties-section'
-import YourRightsSection from './sections/your-rights-section'
-import ComplaintsSection from './sections/complaints-section'
-import LocationOfDataProcessingSection from './sections/location-of-data-processing-section'
-import ChangesToPrivacyPolicySection from './sections/changes-to-privacy-policy-section'
-import InquiriesSection from './sections/inquiries-section'
+import TableOfContents from '../../components/table-of-contents'
+import SummaryOfKeyPoints from './sections/summary-of-key-points'
+import TableOfContentsSection from './sections/table-of-contents-section'
+import WhatInfoWeCollect from './sections/what-info-we-collect'
+import HowWeProcessInfo from './sections/how-we-process-info'
+import ShareInfo from './sections/share-info'
+import CookiesAndTracking from './sections/cookies-and-tracking'
+import InfoTransfer from './sections/info-transfer'
+import KeepInfo from './sections/keep-info'
+import InfoFromMinors from './sections/info-from-minors'
+import PrivacyRights from './sections/privacy-rights'
+import NonTracking from './sections/non-tracking'
+import UpdatesToNotice from './sections/updates-to-notice'
+import ContactUs from './sections/contact-us'
+import ManipulateData from './sections/manipulate-data'
 
 const PrivacyPolicyPage = () => {
-  //! This needs to be rewritten.
+  const { t } = useTranslation()
+
   return (
-    <div className="max-w-[1400px] mx-auto text-white xl:px-[75px] px-[18px] transform-gpu text-2xl">
-      <IntroductionSection />
-      <InfoCollectionSection />
-      <PersonalInfoDisclosureSection />
-      <MeasuresToTakeSection />
-      <SaleOfInfoSection />
-      <CookiesSection />
-      <ChildrenPrivacySection />
-      <RetentionOfInformationSection />
-      <ThirdPartiesSection />
-      <YourRightsSection />
-      <ComplaintsSection />
-      <LocationOfDataProcessingSection />
-      <ChangesToPrivacyPolicySection />
-      <InquiriesSection />
+    <div className="max-w-[1400px] mx-auto text-white xl:px-[75px] px-[18px] transform-gpu text-2xl flex flex-col md:pt-[220px] pt-[110px]">
+      <h1 className="md:text-9xl text-6xl text-center">{t(data.title)}</h1>
+      <h4 className="text-xl mb-20 text-center">{t(data.updated)}</h4>
+
+      <div className="grid grid-cols-[70%,30%] gap-12">
+        <div className="font-light">
+          <IntroductionSection />
+          <SummaryOfKeyPoints />
+          <TableOfContentsSection />
+          <WhatInfoWeCollect />
+          <HowWeProcessInfo />
+          <ShareInfo />
+          <CookiesAndTracking />
+          <InfoTransfer />
+          <KeepInfo />
+          <InfoFromMinors />
+          <PrivacyRights />
+          <NonTracking />
+          <UpdatesToNotice />
+          <ContactUs />
+          <ManipulateData />
+        </div>
+        <TableOfContents />
+      </div>
       <hr className="w-full h-[2px] bg-white opacity-40 rounded-full mt-[130px]" />
     </div>
   )
