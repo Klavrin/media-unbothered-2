@@ -1,11 +1,13 @@
 import { useTranslation } from 'react-i18next'
-import data from '../data/introduction-data.json'
+import data from '../data/summary-of-key-points.json'
 
-const IntroductionSection = () => {
+const SummaryOfKeyPoints = () => {
   const { t } = useTranslation()
 
   return (
-    <section className="flex flex-col justify-center">
+    <section className="mt-20">
+      <h2 className="text-4xl mb-4 font-normal">{t(data.title)}</h2>
+
       {data.descriptions.map((desc, index) => (
         <p
           key={`description-${index}`}
@@ -13,10 +15,11 @@ const IntroductionSection = () => {
             index !== data.descriptions.length - 1 && 'mb-4'
           }`}
           dangerouslySetInnerHTML={{ __html: t(desc.text) }}
+          style={{ fontStyle: index === 0 ? 'italic' : 'normal' }}
         />
       ))}
     </section>
   )
 }
 
-export default IntroductionSection
+export default SummaryOfKeyPoints

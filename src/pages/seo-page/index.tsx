@@ -41,17 +41,19 @@ const SeoPage = () => {
   ]
 
   return (
-    <div className="max-w-[1400px] mx-auto text-white xl:px-[75px] px-[18px] transform-gpu">
-      <SeoCoverSection />
-      {paragraphs.map((para) => (
-        <Fragment key={para.title}>
-          <hr className="w-full h-[2px] bg-white opacity-40 rounded-full" />
-          <ServiceParagraph title={para.title} paragraph={para.paragraph} />
-        </Fragment>
-      ))}
-      <hr className="w-full h-[2px] bg-white opacity-40 rounded-full" />
-      <ReadyToChatSection />
-      <hr className="w-full h-[2px] bg-white opacity-40 rounded-full" />
+    <div className="w-full overflow-hidden">
+      <div className="max-w-[1400px] mx-auto text-white xl:px-[75px] px-[18px] transform-gpu">
+        <SeoCoverSection />
+        {paragraphs.map((para) => (
+          <Fragment key={para.title}>
+            <hr className="w-full h-[2px] bg-white opacity-40 rounded-full" />
+            <ServiceParagraph title={para.title} paragraph={para.paragraph} />
+          </Fragment>
+        ))}
+        <hr className="w-full h-[2px] bg-white opacity-40 rounded-full" />
+        <ReadyToChatSection />
+        <hr className="w-full h-[2px] bg-white opacity-40 rounded-full" />
+      </div>
     </div>
   )
 }
