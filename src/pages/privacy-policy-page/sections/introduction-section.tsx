@@ -5,7 +5,7 @@ const IntroductionSection = () => {
   const { t } = useTranslation()
 
   return (
-    <section className="flex flex-col justify-center ">
+    <section className="flex flex-col justify-center">
       {data.descriptions.map((desc, index) => (
         <p
           key={`description-${index}`}

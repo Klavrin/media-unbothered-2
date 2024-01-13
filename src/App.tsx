@@ -23,7 +23,7 @@ const App = () => {
   return (
     <>
       <Header />
-      <main className="overflow-hidden">
+      <main>
         <InteractiveCursorGSAP />
         <Routes>
           <Route path="/" element={<LandingPage />} />

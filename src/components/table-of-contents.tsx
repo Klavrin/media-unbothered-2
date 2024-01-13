@@ -1,32 +1,84 @@
 const TableOfContents = () => {
+  //! Requires optimization (see lodash)
+
   const contents = [
-    'What information do we collect?',
-    'How do we process your information?',
-    'When and with whom do we share your personal information?',
-    'Do we use cookies and other tracking technologies?',
-    'Is your information transferred internationally?',
-    'How long do we keep your information?',
-    'Do we collect information from minors?',
-    'What are your privacy rights?',
-    'Controls for do-not-track features',
-    'Do we make updates to this notice?',
-    'How can you contact us about this notice?',
-    'How can you review, update, or delete the data we collect from you?'
+    {
+      title: 'What information do we collect?',
+      id: 'info-we-collect'
+    },
+    {
+      title: 'How do we process your information?',
+      id: 'info-we-process'
+    },
+    {
+      title: 'When and with whom do we share your personal information?',
+      id: 'info-we-share'
+    },
+    {
+      title: 'Do we use cookies and other tracking technologies?',
+      id: 'cookies-and-tracking'
+    },
+    {
+      title: 'Is your information transferred internationally?',
+      id: 'info-we-transfer'
+    },
+    {
+      title: 'How long do we keep your information?',
+      id: 'info-we-keep'
+    },
+    {
+      title: 'Do we collect information from minors?',
+      id: 'info-from-minors'
+    },
+    {
+      title: 'What are your privacy rights?',
+      id: 'privacy-rights'
+    },
+    {
+      title: 'Controls for do-not-track features',
+      id: 'non-tracking'
+    },
+    {
+      title: 'Do we make updates to this notice?',
+      id: 'updates-to-notice'
+    },
+    {
+      title: 'How can you contact us about this notice?',
+      id: 'contact-us'
+    },
+    {
+      title: 'How can you review, update, or delete the data we collect from you?',
+      id: 'data-we-manipulate'
+    }
   ]
 
   return (
-    <div>
-      <h2 className="text-3xl font-semibold mb-4">Table of Contents</h2>
+    <div className="pl-10 sticky top-8">
+      <h2 className="text-2xl font-semibold mb-4">Table of Contents</h2>
 
       <ol className="list-decimal pl-10">
         {contents.map((content) => (
-          <li className="text-lg underline cursor-pointer">{content}</li>
+          <li
+            key={content.title}
+            className="lg:text-base text-sm hover:underline cursor-pointer leading-6 mb-1.5"
+            onClick={() => {
+              const section = document.getElementById(content.id)
+              section?.scrollIntoView({ behavior: 'smooth' })
+            }}
+          >
+            {content.title}
+          </li>
         ))}
       </ol>
 
       <hr className="w-full h-[2px] bg-white opacity-40 rounded-full mt-8 mb-4" />
 
-      <button className="text-lg">Back to top</button>
+      <button
+        className="text-base"
+        onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+      >
+        Back to top
+      </button>
     </div>
   )
 }

@@ -5,7 +5,7 @@ const InfoFromMinors = () => {
   const { t } = useTranslation()
 
   return (
-    <section className="mt-20">
+    <section id="info-from-minors" className="mt-20">
       <h2 className="text-4xl mb-4 font-normal uppercase">{t(data.title)}</h2>
 
       {data.content.map((content, index) => (

@@ -21,11 +21,11 @@ const PrivacyPolicyPage = () => {
   const { t } = useTranslation()
 
   return (
-    <div className="max-w-[1400px] mx-auto text-white xl:px-[75px] px-[18px] transform-gpu text-2xl flex flex-col md:pt-[220px] pt-[110px]">
+    <section className="max-w-[1400px] mx-auto text-white xl:px-[75px] px-[18px] transform-gpu text-2xl md:pt-[220px] pt-[110px]">
       <h1 className="md:text-9xl text-6xl text-center">{t(data.title)}</h1>
       <h4 className="text-xl mb-20 text-center">{t(data.updated)}</h4>
 
-      <div className="grid grid-cols-[70%,30%] gap-12">
+      <div className="grid lg:grid-cols-[70%,30%] md:grid-cols-[60%,40%] grid-cols-1">
         <div className="font-light">
           <IntroductionSection />
           <SummaryOfKeyPoints />
@@ -43,10 +43,13 @@ const PrivacyPolicyPage = () => {
           <ContactUs />
           <ManipulateData />
         </div>
-        <TableOfContents />
+        <div className="h-full md:block hidden">
+          <TableOfContents />
+        </div>
       </div>
+
       <hr className="w-full h-[2px] bg-white opacity-40 rounded-full mt-[130px]" />
-    </div>
+    </section>
   )
 }
 

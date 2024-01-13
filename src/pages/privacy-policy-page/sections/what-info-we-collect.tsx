@@ -5,7 +5,7 @@ const WhatInfoWeCollect = () => {
   const { t } = useTranslation()
 
   return (
-    <section className="mt-20">
+    <section id="info-we-collect" className="mt-20">
       <h2 className="text-4xl mb-4 font-normal uppercase">{t(data.title)}</h2>
 
       <h3 className="text-2xl mb-4 font-semibold">
