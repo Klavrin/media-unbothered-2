@@ -74,10 +74,11 @@ const TableOfContents = () => {
       <hr className="w-full h-[2px] bg-white opacity-40 rounded-full mt-8 mb-4" />
 
       <button
-        className="text-base"
+        className="text-base flex items-center gap-2"
         onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
       >
         Back to top
+        <img src="./src/assets/arrow-up.svg" className="w-4" />
       </button>
     </div>
   )
