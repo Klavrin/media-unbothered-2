@@ -13,7 +13,12 @@ const TableOfContentsSection = () => {
           <li
             key={`contents-${index}`}
             className="md:text-2xl text-lg text-blue-400 hover:underline cursor-pointer"
-            dangerouslySetInnerHTML={{ __html: t(content) }}
+            dangerouslySetInnerHTML={{ __html: t(content.title) }}
+            onClick={() => {
+              //! Requires optimiziation
+              const section = document.getElementById(content.id)
+              section?.scrollIntoView({ behavior: 'smooth' })
+            }}
           />
         ))}
       </ol>
