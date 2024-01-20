@@ -1,5 +1,6 @@
 import { useTranslation } from 'react-i18next'
 import data from './data/introduction-data.json'
+
 import IntroductionSection from './sections/introduction-section'
 import TableOfContents from '../../components/table-of-contents'
 import SummaryOfKeyPoints from './sections/summary-of-key-points'
@@ -43,6 +44,7 @@ const PrivacyPolicyPage = () => {
           <ContactUs />
           <ManipulateData />
         </div>
+
         <div className="h-full md:block hidden">
           <TableOfContents />
         </div>

@@ -1,6 +1,9 @@
-const TableOfContents = () => {
-  //! Requires optimization (see lodash)
+import useCursorSize from '../lib/use-cursor-size'
 
+const TableOfContents = () => {
+  const { setCursorSize } = useCursorSize()
+
+  //! Requires optimization (see lodash)
   const contents = [
     {
       title: 'What information do we collect?',
@@ -65,6 +68,8 @@ const TableOfContents = () => {
               const section = document.getElementById(content.id)
               section?.scrollIntoView({ behavior: 'smooth' })
             }}
+            onMouseOver={() => setCursorSize(20)}
+            onMouseLeave={() => setCursorSize(40)}
           >
             {content.title}
           </li>

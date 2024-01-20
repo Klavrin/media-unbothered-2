@@ -1,8 +1,10 @@
 import { useTranslation } from 'react-i18next'
 import data from '../data/table-of-contents.json'
+import useCursorSize from '../../../lib/use-cursor-size'
 
 const TableOfContentsSection = () => {
   const { t } = useTranslation()
+  const { setCursorSize } = useCursorSize()
 
   return (
     <section className="mt-20">
@@ -19,6 +21,8 @@ const TableOfContentsSection = () => {
               const section = document.getElementById(content.id)
               section?.scrollIntoView({ behavior: 'smooth' })
             }}
+            onMouseOver={() => setCursorSize(20)}
+            onMouseLeave={() => setCursorSize(40)}
           />
         ))}
       </ol>
