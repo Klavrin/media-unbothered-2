@@ -47,7 +47,11 @@ const WebDevelopmentPage = () => {
         {paragraphs.map((para) => (
           <Fragment key={para.title}>
             <hr className="w-full h-[2px] bg-white opacity-40 rounded-full" />
-            <ServiceParagraph title={para.title} paragraph={para.paragraph} />
+            <ServiceParagraph
+              title={para.title}
+              paragraph={para.paragraph}
+              pdfFile="web-development-manual"
+            />
           </Fragment>
         ))}
         <hr className="w-full h-[2px] bg-white opacity-40 rounded-full" />

@@ -6,35 +6,35 @@ import ServiceParagraph from '../../components/service-paragraph'
 const WebDesignPage = () => {
   const paragraphs = [
     {
-      title: 'Understanding Your Vision',
+      title: 'Thorough Consultation Process',
       paragraph:
-        "Before we embark on this exciting venture together, we'll engage in a conversation to comprehend your goals, timeline, and budget. Your insights are invaluable, guiding us to create a digital solution that perfectly aligns with your aspirations."
+        'Our journey begins with an in-depth conversation to understand your design preferences, overarching goals, and the broader vision you hold for your website. This initial consultation serves as the foundation for a design that resonates with your unique identity.'
     },
     {
-      title: 'Transparent Development Process',
+      title: 'Empowering Client-Centric Design Exploration',
       paragraph:
-        'Once your design is in our capable hands, the development journey begins. Expect regular updates every week, providing insights into our progress. Your flexibility in scheduling meetings is important to us.'
+        'Moving beyond conventional practices, we empower you to actively participate in the design process. Through sketching sessions, you can visually articulate your ideas, providing an additional layer of understanding that guides our design team towards crafting a truly personalized web experience.'
     },
     {
-      title: 'Open Channels for Ideas',
+      title: 'Reference Examples and Nuanced Color Preferences',
       paragraph:
-        "Your input is invaluable. Feel free to share any ideas you believe will enhance your website. Collaboration is key, and we're here to incorporate your insights into the development process."
+        "You are encouraged to share not only the websites that inspire you but also the specific elements that capture your imagination. We delve into the nuances, including detailed discussions on color preferences, ensuring that every aspect aligns seamlessly with your vision. Alternatively, for those who prefer a hands-off approach, we're more than equipped to take the reins, allowing trust to flourish."
     },
     {
-      title: 'Visualization Options',
+      title: 'Engaging Iterative Feedback Loop',
       paragraph:
-        'Should you feel inclined, sketch out your vision! While entirely optional, your drawings can offer an additional layer of understanding in shaping your website.'
+        'We believe in the power of collaboration and maintain an iterative feedback loop. Weekly updates keep you in the loop about the evolving design, fostering an environment where your insights are actively sought and valued.'
     },
     {
-      title: 'Final Touches Based on Your Feedback',
+      title: 'Consistent Design Updates for Transparency',
       paragraph:
-        "Once the product is ready for your review, take your time exploring. Let us know any changes, additions, or removals you'd like. Your satisfaction is our priority."
+        'Transparency is key. Our commitment extends to regular design updates every 1-2 weeks, providing you with a comprehensive view of the ongoing progress. This approach ensures that feedback can be provided at crucial stages, allowing for timely adjustments.'
     },
     {
       title: 'Wait, there is more!',
       paragraph: {
         par1: "Explore beyond the surface—what you've glimpsed so far is just the tip of the iceberg. For a deeper understanding and a wealth of information, delve into the",
-        par2: 'Web Development Manual.',
+        par2: 'Web Design Manual.',
         par3: "There's more awaiting your discovery!"
       }
     }
@@ -47,7 +47,11 @@ const WebDesignPage = () => {
         {paragraphs.map((para) => (
           <Fragment key={para.title}>
             <hr className="w-full h-[2px] bg-white opacity-40 rounded-full" />
-            <ServiceParagraph title={para.title} paragraph={para.paragraph} />
+            <ServiceParagraph
+              title={para.title}
+              paragraph={para.paragraph}
+              pdfFile="web-design-manual"
+            />
           </Fragment>
         ))}
         <hr className="w-full h-[2px] bg-white opacity-40 rounded-full" />

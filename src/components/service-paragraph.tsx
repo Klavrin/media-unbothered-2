@@ -4,17 +4,12 @@ import { useTranslation } from 'react-i18next'
 type ParagraphProps = {
   title: string
   paragraph: string | { par1: string; par2: string; par3: string }
+  pdfFile?: string
 }
 
-const ServiceParagraph = ({ title, paragraph }: ParagraphProps) => {
+const ServiceParagraph = ({ title, paragraph, pdfFile }: ParagraphProps) => {
   const { setCursorSize } = useCursorSize()
   const { t } = useTranslation()
-
-  const x = {
-    par1: "Explore beyond the surface—what you've glimpsed so far is just the tip of the iceberg. For a deeper understanding and a wealth of information, delve into the",
-    par2: 'Web Development Manual',
-    par3: ". There's more awaiting your discovery!"
-  }
 
   return (
     <div className="py-[57px]">
@@ -32,7 +27,13 @@ const ServiceParagraph = ({ title, paragraph }: ParagraphProps) => {
         ) : (
           <>
             {t(paragraph.par1)}
-            <span className="underline cursor-pointer">{t(x.par2)}</span>
+            <a
+              href={`./public/${pdfFile}.pdf`}
+              download
+              className="underline cursor-pointer"
+            >
+              {t(paragraph.par2)}
+            </a>
             {t(paragraph.par3)}
           </>
         )}
