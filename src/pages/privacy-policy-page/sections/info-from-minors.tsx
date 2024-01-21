@@ -6,7 +6,7 @@ const InfoFromMinors = () => {
 
   return (
     <section id="info-from-minors" className="mt-20">
-      <h2 className="text-4xl mb-4 font-normal uppercase">{t(data.title)}</h2>
+      <h2 className="md:text-4xl text-2xl mb-4 font-normal uppercase">{t(data.title)}</h2>
 
       {data.content.map((content, index) => (
         <p

@@ -1,6 +1,7 @@
 import { useEffect } from 'react'
 import { Routes, Route } from 'react-router-dom'
 import i18next from 'i18next'
+
 import Header from './components/header'
 import Footer from './components/footer'
 import LandingPage from './pages/landing-page'
