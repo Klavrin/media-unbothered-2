@@ -1,6 +1,8 @@
+import { useTranslation } from 'react-i18next'
 import useCursorSize from '../lib/use-cursor-size'
 
 const TableOfContents = () => {
+  const { t } = useTranslation()
   const { setCursorSize } = useCursorSize()
 
   //! Requires optimization (see lodash)
@@ -57,7 +59,7 @@ const TableOfContents = () => {
 
   return (
     <div className="pl-10 sticky top-8">
-      <h2 className="text-2xl font-semibold mb-4">Table of Contents</h2>
+      <h2 className="text-2xl font-semibold mb-4">{t('Table of Contents')}</h2>
 
       <ol className="list-decimal pl-10">
         {contents.map((content) => (
@@ -71,7 +73,7 @@ const TableOfContents = () => {
             onMouseOver={() => setCursorSize(20)}
             onMouseLeave={() => setCursorSize(40)}
           >
-            {content.title}
+            {t(content.title)}
           </li>
         ))}
       </ol>
@@ -82,7 +84,7 @@ const TableOfContents = () => {
         className="text-base flex items-center gap-2"
         onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
       >
-        Back to top
+        {t('Back to top')}
         <img src="./src/assets/arrow-up.svg" className="w-4" />
       </button>
     </div>

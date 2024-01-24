@@ -9,7 +9,7 @@ const WhatInfoWeCollect = () => {
       <h2 className="md:text-4xl text-2xl mb-4 font-normal uppercase">{t(data.title)}</h2>
 
       <h3 className="text-2xl mb-4 font-semibold">
-        {data.personalInfoYouDisclose.title}
+        {t(data.personalInfoYouDisclose.title)}
       </h3>
 
       {data.personalInfoYouDisclose.content.map((content, index) => (
