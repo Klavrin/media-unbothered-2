@@ -2,10 +2,13 @@ import { useTranslation } from 'react-i18next'
 import CustomButton from '../../../components/custom-button'
 import HireUsButton from '../../../components/hire-us-button'
 import useCursorSize from '../../../lib/use-cursor-size'
+import { useDispatch } from 'react-redux'
+import { setDialogVisibility } from '../../../store/reducers/dialog-visible-slice'
 
 const MaintenanceCoverSection = () => {
   const { setCursorSize } = useCursorSize()
   const { t } = useTranslation()
+  const dispatch = useDispatch()
 
   return (
     <section className="xl:h-screen h-full pb-[50px] pt-[120px] flex flex-col justify-center">
@@ -34,12 +37,13 @@ const MaintenanceCoverSection = () => {
           )}
         </p>
 
-        <HireUsButton />
+        <HireUsButton onClick={() => dispatch(setDialogVisibility())} />
         <CustomButton
           innerText="Hire us"
           styles="text-[20px] px-[50px] py-[11px]"
           imgStyles="min-w-[40px]"
           hideForWideScreens
+          onClick={() => dispatch(setDialogVisibility())}
         />
       </div>
     </section>

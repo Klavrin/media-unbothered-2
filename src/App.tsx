@@ -15,6 +15,7 @@ import InteractiveCursorGSAP from './components/interactive-cursor-gsap'
 import Dialog from './components/dialog'
 
 /**
+ * @todo: Use the CoverSection as a component.
  * @todo Optimize the table-of-contents component and the table-of-contents-section (see lodash?)
  */
 
