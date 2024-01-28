@@ -12,6 +12,7 @@ import MaintenanceAndSupportPage from './pages/maintenance-page'
 import PrivacyPolicyPage from './pages/privacy-policy-page'
 import PageNotFound from './pages/404-page'
 import InteractiveCursorGSAP from './components/interactive-cursor-gsap'
+import Dialog from './components/dialog'
 
 /**
  * @todo Optimize the table-of-contents component and the table-of-contents-section (see lodash?)
@@ -30,6 +31,7 @@ const App = () => {
       <Header />
       <main>
         <InteractiveCursorGSAP />
+        <Dialog />
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="web-development" element={<WebDevelopmentPage />} />

@@ -2,10 +2,13 @@ import CustomButton from '../../../components/custom-button'
 import DashedButton from '../../../components/dashed-button'
 import useCursorSize from '../../../lib/use-cursor-size'
 import { useTranslation } from 'react-i18next'
+import { useDispatch } from 'react-redux'
+import { setDialogVisibility } from '../../../store/reducers/dialog-visible-slice'
 
 const ReadyToChatSection = () => {
   const { setCursorSize } = useCursorSize()
   const { t } = useTranslation()
+  const dispatch = useDispatch()
 
   return (
     <section className="md:py-[130px] py-[50px]">
@@ -29,6 +32,7 @@ const ReadyToChatSection = () => {
           innerText="Let's talk."
           styles="xl:px-[117px] md:px-[8.35vw] px-[53px] py-[10px] xl:text-[60px] text-[4.28vw]"
           imgStyles="xl:min-w-[70px] sm:min-w-[5vw] min-w-[30px]"
+          onClick={() => dispatch(setDialogVisibility())}
         />
         <DashedButton innerText="About us" />
       </div>

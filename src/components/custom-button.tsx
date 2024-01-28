@@ -6,35 +6,39 @@ type CustomButtonProps = {
   styles?: string
   imgStyles?: string
   hideForWideScreens?: boolean
+  onClick?: () => void
 }
 
 const CustomButton = ({
   innerText,
   styles,
   imgStyles,
-  hideForWideScreens
+  hideForWideScreens,
+  onClick
 }: CustomButtonProps) => {
   const { setCursorSize } = useCursorSize()
   const { t } = useTranslation()
 
   return (
-    <div className={`flex ${hideForWideScreens && 'md:hidden'}`}>
-      <div className="flex items-center relative">
-        <button
-          className={`bg-white text-black rounded-[56px] whitespace-nowrap flex items-center ${styles}`}
-          onMouseOver={() => setCursorSize(180)}
-          onMouseLeave={() => setCursorSize(40)}
-        >
-          {t(innerText)}
-        </button>
+    <>
+      <div className={`flex ${hideForWideScreens && 'md:hidden'}`} onClick={onClick}>
+        <div className="flex items-center relative">
+          <button
+            className={`bg-white text-black rounded-[56px] whitespace-nowrap flex items-center ${styles}`}
+            onMouseOver={() => setCursorSize(180)}
+            onMouseLeave={() => setCursorSize(40)}
+          >
+            {t(innerText)}
+          </button>
 
-        <img
-          src="./src/assets/custom-button-arrow.svg"
-          className={`absolute 2xl:-right-7 right-[-2vw] pointer-events-none ${imgStyles}`}
-          loading="lazy"
-        />
+          <img
+            src="./src/assets/custom-button-arrow.svg"
+            className={`absolute 2xl:-right-7 right-[-2vw] pointer-events-none ${imgStyles}`}
+            loading="lazy"
+          />
+        </div>
       </div>
-    </div>
+    </>
   )
 }
 

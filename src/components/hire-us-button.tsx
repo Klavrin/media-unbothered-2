@@ -1,11 +1,18 @@
 import useCursorSize from '../lib/use-cursor-size'
 import GsapMagnetic from './gsap-magnetic'
 
-const HireUsButton = () => {
+type HireUsButtonProps = {
+  onClick?: () => void
+}
+
+const HireUsButton = ({ onClick }: HireUsButtonProps) => {
   const { setCursorSize } = useCursorSize()
 
   return (
-    <div className="w-full min-w-[150px] min-h-[150px] md:flex hidden justify-center items-center">
+    <div
+      className="w-full min-w-[150px] min-h-[150px] md:flex hidden justify-center items-center"
+      onClick={onClick}
+    >
       <GsapMagnetic>
         <img
           src="./src/assets/hire-us-button.png"

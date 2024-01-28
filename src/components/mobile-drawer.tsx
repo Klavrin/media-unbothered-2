@@ -3,9 +3,11 @@ import { Link } from 'react-router-dom'
 import gsap from 'gsap'
 import { useTranslation } from 'react-i18next'
 import MobileLanguageDropdownMenu from './mobile-language-dropdown-menu'
+import { useDispatch } from 'react-redux'
+import { setDialogVisibility } from '../store/reducers/dialog-visible-slice'
 
 type MobileDrawerProps = {
-  links: { title: string; to: string }[]
+  links: { title: string; to?: string }[]
   drawerOpened: boolean
   closeDrawer: () => void
   drawerRef: React.RefObject<HTMLDivElement>
@@ -18,6 +20,7 @@ const MobileDrawer = ({
   drawerRef
 }: MobileDrawerProps) => {
   const { t } = useTranslation()
+  const dispatch = useDispatch()
 
   useEffect(() => {
     const handleResize = () => {
@@ -67,9 +70,10 @@ const MobileDrawer = ({
       <div className="h-full flex flex-col justify-center gap-4">
         {links.map((link) => (
           <Link
-            to="/"
+            to={link.to ? link.to : '#'}
             key={link.title}
             className="text-6xl font-semibold opacity-80 hover:opacity-100 transition-all"
+            onClick={() => dispatch(setDialogVisibility())}
           >
             {t(link.title)}
           </Link>

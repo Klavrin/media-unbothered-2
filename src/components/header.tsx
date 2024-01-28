@@ -1,6 +1,9 @@
 import { Fragment, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
+import { useDispatch } from 'react-redux'
+import { setDialogVisibility } from '../store/reducers/dialog-visible-slice'
+
 import useCursorSize from '../lib/use-cursor-size'
 import HamburgerMenu from './hamburger-menu'
 import MobileDrawer from './mobile-drawer'
@@ -11,15 +14,16 @@ const Header = () => {
   const drawerRef = useRef(null)
   const { setCursorSize } = useCursorSize()
   const { t } = useTranslation()
+  const dispatch = useDispatch()
 
   const links = [
     { title: 'About us', to: '/' },
     { title: 'Services', to: '/' },
-    { title: 'Contact', to: '/' }
+    { title: 'Contact', onClick: () => dispatch(setDialogVisibility()) }
   ]
 
   return (
-    <header className="w-screen absolute z-50 transform-gpu">
+    <header className="w-screen absolute z-40 transform-gpu">
       <div className="max-w-[1400px] h-[75px] mx-auto xl:px-[75px] px-[18px] text-white flex justify-between items-center transition-[padding] duration-500">
         <div className="sm:static absolute left-0 sm:w-auto w-screen text-center">
           <Link
@@ -43,13 +47,15 @@ const Header = () => {
           {links.map((link) => (
             <Fragment key={link.title}>
               <Link
-                to={link.to}
+                to={link.to ? link.to : '#'}
                 className="hover:opacity-70 transition-all"
                 onMouseOver={() => setCursorSize(60)}
                 onMouseLeave={() => setCursorSize(40)}
+                onClick={() => dispatch(setDialogVisibility())}
               >
                 {t(link.title)}
               </Link>
+
               <img
                 src="./src/assets/ellipse.svg"
                 alt=""
