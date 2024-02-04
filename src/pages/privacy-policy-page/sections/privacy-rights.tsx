@@ -11,14 +11,16 @@ const PrivacyRights = () => {
       {data.content.map((content, index) => (
         <p
           key={`rights-${index}`}
-          className="md:text-2xl text-lg mb-4"
+          className="md:text-2xl text-lg mb-4 opacity-80"
           dangerouslySetInnerHTML={{ __html: t(content) }}
         />
       ))}
 
-      <h3 className="text-2xl mb-2 font-semibold">{t(data.accountInfo.title)}</h3>
+      <h3 className="text-2xl mb-2 font-semibold opacity-80">
+        {t(data.accountInfo.title)}
+      </h3>
       <p
-        className="md:text-2xl text-lg"
+        className="md:text-2xl text-lg opacity-80"
         dangerouslySetInnerHTML={{ __html: t(data.accountInfo.content) }}
       />
     </section>

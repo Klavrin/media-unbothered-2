@@ -11,7 +11,9 @@ const InfoFromMinors = () => {
       {data.content.map((content, index) => (
         <p
           key={`info-${index}`}
-          className={`md:text-2xl text-lg ${index !== data.content.length - 1 && 'mb-4'}`}
+          className={`md:text-2xl text-lg opacity-80 ${
+            index !== data.content.length - 1 && 'mb-4'
+          }`}
           dangerouslySetInnerHTML={{ __html: t(content) }}
         />
       ))}

@@ -11,7 +11,7 @@ const SummaryOfKeyPoints = () => {
       {data.descriptions.map((desc, index) => (
         <p
           key={`description-${index}`}
-          className={`md:text-2xl text-lg ${
+          className={`md:text-2xl text-lg opacity-80 ${
             index !== data.descriptions.length - 1 && 'mb-4'
           }`}
           dangerouslySetInnerHTML={{ __html: t(desc.text) }}

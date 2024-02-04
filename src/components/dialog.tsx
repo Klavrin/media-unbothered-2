@@ -26,7 +26,7 @@ const Dialog = () => {
       onClick={() => dispatch(setDialogVisibility())}
     >
       <div
-        className="w-[600px] bg-black text-white flex flex-col p-10 rounded-lg"
+        className="w-[600px] bg-black text-white flex flex-col sm:p-10 p-6 rounded-lg"
         onClick={(e) => e.stopPropagation()}
       >
         <h2 className="sm:text-4xl text-xl">Contact us</h2>

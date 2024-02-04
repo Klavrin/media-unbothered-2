@@ -11,7 +11,7 @@ const ShareInfo = () => {
       {data.content.map((content, index) => (
         <p
           key={`privacy-${index}`}
-          className="md:text-2xl text-lg mb-4"
+          className="md:text-2xl text-lg mb-4 opacity-80"
           dangerouslySetInnerHTML={{ __html: t(content) }}
         />
       ))}
@@ -20,7 +20,7 @@ const ShareInfo = () => {
         {data.situations.map((situation, index) => (
           <li
             key={`situation-${index}`}
-            className={`md:text-2xl text-lg ${
+            className={`md:text-2xl text-lg opacity-80 ${
               index !== data.situations.length - 1 && 'mb-4'
             }`}
             dangerouslySetInnerHTML={{ __html: t(situation) }}

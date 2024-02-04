@@ -11,7 +11,7 @@ const CookiesAndTracking = () => {
       {data.content.map((content, index) => (
         <p
           key={`description-${index}`}
-          className={`md:text-2xl text-lg ${index === 0 && 'mb-4'}`}
+          className={`md:text-2xl text-lg opacity-80 ${index === 0 && 'mb-4'}`}
           dangerouslySetInnerHTML={{ __html: t(content) }}
         />
       ))}
